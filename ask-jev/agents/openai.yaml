@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ask Jev"
+  short_description: "Batch quick Noul, Choice, and Score judgments"
+  default_prompt: "Use $ask-jev to judge several questions against this evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluate Options"
+  short_description: "Compare supplied decisions using Jev evidence"
+  default_prompt: "Use $evaluate-options to review the current artifact and report cited findings."

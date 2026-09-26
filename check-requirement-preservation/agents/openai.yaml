@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Requirement Preservation"
+  short_description: "Trace RDD behavior through SDD and TDD"
+  default_prompt: "Use $check-requirement-preservation to review the current artifact and report cited findings."

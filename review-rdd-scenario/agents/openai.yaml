@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review RDD Scenario"
+  short_description: "Review scenario wording and observable outcomes"
+  default_prompt: "Use $review-rdd-scenario to review the current artifact and report cited findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Code Module"
+  short_description: "Review Python module semantics after a green gate"
+  default_prompt: "Use $review-code-module to review the current artifact and report cited findings."

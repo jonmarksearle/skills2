@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Design Element"
+  short_description: "Judge module elements against current design"
+  default_prompt: "Use $review-design-element to review the current artifact and report cited findings."

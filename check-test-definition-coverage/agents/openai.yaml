@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Test Definition Coverage"
+  short_description: "Check pytest tests against TDD definitions"
+  default_prompt: "Use $check-test-definition-coverage to review the current artifact and report cited findings."

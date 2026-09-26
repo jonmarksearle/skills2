@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Scenario Set"
+  short_description: "Find gaps and contradictions in RDD scenarios"
+  default_prompt: "Use $check-scenario-set to review the current artifact and report cited findings."

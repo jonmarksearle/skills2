@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Completion Claim"
+  short_description: "Check claims and diagnose strict xfail XPASS"
+  default_prompt: "Use $verify-completion-claim to review the current artifact and report cited findings."

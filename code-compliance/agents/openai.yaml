@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Compliance"
+  short_description: "Score Python code against Standards principles"
+  default_prompt: "Use $code-compliance to audit a module's src and test files at its Outer Refactoring gate."

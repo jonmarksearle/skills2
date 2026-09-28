@@ -1,0 +1,20 @@
+{
+  "name": "Baked-In Data Regeneration After a Standards Edit",
+  "skills": ["code-compliance"],
+  "query": "I added a new bullet to CODE_STANDARDS.md section 9. Refresh the baked-in principle data before the next audit.",
+  "context": "Standards/CODE_STANDARDS.md changed; scripts/jev_code_compliance_data.json and references/jev_code_compliance.md were built from the prior version. This is the setup path (references/setup.md), not part of ordinary skill use.",
+  "expected_behavior": [
+    "Runs uv run E:/work/.agents/skills/code-compliance/scripts/jev_define_compliance.py from the project whose Standards changed, with --code-standards/--examples/--pytest-standard only if the defaults (../Standards/CODE_STANDARDS*.md) don't already resolve",
+    "Overwrites scripts/jev_code_compliance_data.json and references/jev_code_compliance.md in place; does not hand-edit either to patch in the one new bullet",
+    "The new bullet becomes its own principle (one principle per bullet, not merged into an existing one or attached as extra text on a neighbouring principle)",
+    "If section 9 already had a worked example in CODE_STANDARDS.examples.md, the new bullet's principle cites the same example_ref as the section's other principles rather than embedding a duplicate copy of the example text",
+    "A negated bullet (starting 'Avoid ', 'Do not ', \"Don't \", or 'Never ') keeps its negation in the generated term rather than having the negating word stripped and the rule's meaning reversed"
+  ],
+  "success_criteria": [
+    "scripts/jev_code_compliance_data.json's src_criteria array length increases by exactly one after the regeneration",
+    "The new principle's id follows the CS-09-<n> pattern (section 9, next bullet index)",
+    "src_examples's key count does not grow if section 9 already had a worked example before the edit",
+    "Every principle in the JSON whose definition contains 'Avoid ', 'Do not ', \"Don't \", or 'Never ' has a term that also starts with one of those, not a term implying the opposite",
+    "The regenerated file is valid JSON (python -c \"import json; json.load(open(path))\" succeeds)"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Src File Outer Refactoring Audit",
+  "skills": ["code-compliance"],
+  "query": "period_state's Outer Refactoring gate is due. Audit src/beansmeans/period_state.py against the Standards and tell me what to inspect.",
+  "context": "beansmeans repo, cwd is the project root. The code-compliance skill's baked-in data (scripts/jev_code_compliance_data.json) already exists and is current with Standards/CODE_STANDARDS.md. src/beansmeans/period_state.py has 9 top-level constructs (3 frozen dataclasses, 1 StrEnum, 5 functions).",
+  "expected_behavior": [
+    "Runs uv run E:/work/.agents/skills/code-compliance/scripts/jev_code_compliance.py src/beansmeans/period_state.py --out <matrix.json>, with no --module-kind/--src-criteria/--test-criteria flags",
+    "Every construct is classified role=src (a src-kind module always uses the src role, per jev_code_compliance.py's _classify), inferred automatically because the path is not under a tests directory and does not start with test_",
+    "Because the full src principle table (131 principles, 16 worked examples) does not fit one 64 KiB request, each construct costs more than one Jev call -- this is expected, not treated as a bug",
+    "Runs uv run E:/work/.agents/skills/code-compliance/scripts/jev_code_compliance_report.py against the resulting matrix to render the report",
+    "Writes the report to src/beansmeans/period_state.py.jev.compliance-report.{n}.md, incrementing {n} past any existing report for that file rather than overwriting it",
+    "Presents the 'Needs inspection' rows to the user as leads to check against real source, not as confirmed defects",
+    "Does not edit period_state.py on the strength of the report alone without the user inspecting flagged rows first"
+  ],
+  "success_criteria": [
+    "The report's construct count matches the file's actual top-level construct count (9)",
+    "The report has a Principles section (ID, Term, Sources), a Needs inspection section, and a Full matrix section, in that order",
+    "Needs inspection rows are sorted worst-first (highest attention: low score, high confidence, high applicability)",
+    "Every principle ID cited in Needs inspection also appears in the Principles legend",
+    "The Jev call count reported is at least 2x the construct count (batching, not one call per construct)"
+  ]
+}

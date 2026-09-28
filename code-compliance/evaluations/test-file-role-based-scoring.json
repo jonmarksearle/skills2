@@ -1,0 +1,20 @@
+{
+  "name": "Test File Role-Based Scoring",
+  "skills": ["code-compliance"],
+  "query": "Also audit tests/test_period_state.py for period_state's Outer Refactoring gate.",
+  "context": "beansmeans repo. tests/test_period_state.py has one @pytest.fixture function named parse_period that wraps the real parse_period from period_state.py, one @pytest.fixture function named period_state_module, one plain dataclass named ExpectedQuarterDisposition used as test-support, and a number of test_* functions.",
+  "expected_behavior": [
+    "Runs uv run E:/work/.agents/skills/code-compliance/scripts/jev_code_compliance.py tests/test_period_state.py --out <matrix.json>, with no --module-kind/--src-criteria/--test-criteria flags",
+    "Infers module-kind=test automatically because tests is a path component",
+    "Classifies every test_*-named function as role=test and scores it only against the test (pytest) principle table",
+    "Classifies the @pytest.fixture-decorated parse_period as role=fixture, not confused with the identically-named real function in period_state.py, and scores it against both test and src principle tables",
+    "Classifies the plain ExpectedQuarterDisposition dataclass as role=helper and also scores it against both principle tables, since it is still ordinary Python the general Standard governs",
+    "Writes the report to tests/test_period_state.py.jev.compliance-report.{n}.md, incrementing {n} rather than overwriting an existing report for that file"
+  ],
+  "success_criteria": [
+    "The report's Full matrix appendix has a separate table for the role group that only used test principles and a separate table for the role group that used both test and src principles",
+    "No test_*-named function's row set includes any CS-* principle ID",
+    "parse_period's and period_state_module's row sets include both PT-* and CS-* principle IDs",
+    "ExpectedQuarterDisposition's row set includes both PT-* and CS-* principle IDs"
+  ]
+}

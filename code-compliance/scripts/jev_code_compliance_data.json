@@ -1,0 +1,2031 @@
+{
+  "src_criteria": [
+    {
+      "id": "CS-00-01",
+      "term": "Correctness (tests define behaviour)",
+      "label": "Correctness (tests define behaviour).",
+      "definition": "Correctness (tests define behaviour).",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-02",
+      "term": "Clarity (obvious intent; easy to change)",
+      "label": "Clarity (obvious intent; easy to change).",
+      "definition": "Clarity (obvious intent; easy to change).",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-03",
+      "term": "Simplicity (minimal surface area)",
+      "label": "Simplicity (minimal surface area).",
+      "definition": "Simplicity (minimal surface area).",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-04",
+      "term": "Performance (only after 1–3; measure first)",
+      "label": "Performance (only after 1–3; measure first).",
+      "definition": "Performance (only after 1–3; measure first).",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-05",
+      "term": "Meaningful Names",
+      "label": "Use Meaningful Names.",
+      "definition": "Use Meaningful Names.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-06",
+      "term": "Functions Small",
+      "label": "Keep Functions Small.",
+      "definition": "Keep Functions Small.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-07",
+      "term": "Minimise Comments",
+      "label": "Minimise Comments.",
+      "definition": "Minimise Comments.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-08",
+      "term": "Don't Repeat Yourself (DRY)",
+      "label": "Don't Repeat Yourself (DRY).",
+      "definition": "Don't Repeat Yourself (DRY).",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-09",
+      "term": "Single Responsibility Principle (SRP)",
+      "label": "Single Responsibility Principle (SRP).",
+      "definition": "Single Responsibility Principle (SRP).",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-10",
+      "term": "Composition Over Inheritance",
+      "label": "Composition Over Inheritance.",
+      "definition": "Composition Over Inheritance.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-11",
+      "term": "Parameter Lists Short",
+      "label": "Keep Parameter Lists Short.",
+      "definition": "Keep Parameter Lists Short.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-12",
+      "term": "Handle Errors Gracefully",
+      "label": "Handle Errors Gracefully.",
+      "definition": "Handle Errors Gracefully.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-13",
+      "term": "Write Tests for Everything",
+      "label": "Write Tests for Everything.",
+      "definition": "Write Tests for Everything.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-14",
+      "term": "Organise Code for Readability",
+      "label": "Organise Code for Readability.",
+      "definition": "Organise Code for Readability.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-15",
+      "term": "Team-Friendly Code",
+      "label": "Team-Friendly Code.",
+      "definition": "Team-Friendly Code.",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-00-16",
+      "term": "Tools to keep Code Clean (Linters, Type Checkers, Formatters)",
+      "label": "Use Tools to keep Code Clean (Linters, Type Checkers, Formatters)",
+      "definition": "Use Tools to keep Code Clean (Linters, Type Checkers, Formatters)",
+      "sources": [
+        "CODE_STANDARDS.md §0) Principles",
+        "CODE_STANDARDS.examples.md §0) Principles"
+      ],
+      "example_ref": "code_standards_md_CS_00"
+    },
+    {
+      "id": "CS-01-01",
+      "term": "Australian English in docs, comments, logs, tests, and identifiers",
+      "label": "Use Australian English in docs, comments, logs, tests, and identifiers where appropriate (behaviour, colour).",
+      "definition": "Use Australian English in docs, comments, logs, tests, and identifiers where appropriate (behaviour, colour).",
+      "sources": [
+        "CODE_STANDARDS.md §1) Language and naming",
+        "CODE_STANDARDS.examples.md §1) Language and naming"
+      ],
+      "example_ref": "code_standards_md_CS_01"
+    },
+    {
+      "id": "CS-01-02",
+      "term": "Meaningful names over explanatory comments",
+      "label": "Prefer meaningful names over explanatory comments.",
+      "definition": "Prefer meaningful names over explanatory comments.",
+      "sources": [
+        "CODE_STANDARDS.md §1) Language and naming",
+        "CODE_STANDARDS.examples.md §1) Language and naming"
+      ],
+      "example_ref": "code_standards_md_CS_01"
+    },
+    {
+      "id": "CS-01-03",
+      "term": "Names that encode the rule/intent",
+      "label": "Prefer names that encode the rule/intent (so comments can be deleted, not maintained).",
+      "definition": "Prefer names that encode the rule/intent (so comments can be deleted, not maintained).",
+      "sources": [
+        "CODE_STANDARDS.md §1) Language and naming",
+        "CODE_STANDARDS.examples.md §1) Language and naming"
+      ],
+      "example_ref": "code_standards_md_CS_01"
+    },
+    {
+      "id": "CS-02-01",
+      "term": "Target: Python 3.12+",
+      "label": "Default target: Python 3.12+ (prefer 3.14 features when they improve clarity and are supported).",
+      "definition": "Default target: Python 3.12+ (prefer 3.14 features when they improve clarity and are supported).",
+      "sources": [
+        "CODE_STANDARDS.md §2) Defaults (and overrides)",
+        "CODE_STANDARDS.examples.md §2) Defaults (and overrides)"
+      ],
+      "example_ref": "code_standards_md_CS_02"
+    },
+    {
+      "id": "CS-02-02",
+      "term": "Override: follow the project’s pinned Python version when operations",
+      "label": "Override: follow the project’s pinned Python version when operations require it.",
+      "definition": "Override: follow the project’s pinned Python version when operations require it.",
+      "sources": [
+        "CODE_STANDARDS.md §2) Defaults (and overrides)",
+        "CODE_STANDARDS.examples.md §2) Defaults (and overrides)"
+      ],
+      "example_ref": "code_standards_md_CS_02"
+    },
+    {
+      "id": "CS-02-03",
+      "term": "Follow PEP 8; let `ruff` be the enforcer",
+      "label": "Follow PEP 8; let `ruff` be the enforcer.",
+      "definition": "Follow PEP 8; let `ruff` be the enforcer.",
+      "sources": [
+        "CODE_STANDARDS.md §2) Defaults (and overrides)",
+        "CODE_STANDARDS.examples.md §2) Defaults (and overrides)"
+      ],
+      "example_ref": "code_standards_md_CS_02"
+    },
+    {
+      "id": "CS-03",
+      "term": "TDD roles",
+      "label": "3) TDD roles",
+      "definition": "Follow the roles and review steps in `TDD_PROCESS.md`.",
+      "sources": [
+        "CODE_STANDARDS.md §3) TDD roles",
+        "CODE_STANDARDS.examples.md §3) TDD roles"
+      ],
+      "example_ref": "code_standards_md_CS_03"
+    },
+    {
+      "id": "CS-04",
+      "term": "TDD workflow",
+      "label": "4) TDD workflow",
+      "definition": "Follow the TDD steps and quality gate in `TDD_PROCESS.md`.\nUse `JUSTFILE_STANDARDS.md` to define the command targets.",
+      "sources": [
+        "CODE_STANDARDS.md §4) TDD workflow",
+        "CODE_STANDARDS.examples.md §4) TDD workflow"
+      ],
+      "example_ref": "code_standards_md_CS_04"
+    },
+    {
+      "id": "CS-05-01",
+      "term": "A pragmatic blend of FP and OOP: favour pure functions, immutability",
+      "label": "Prefer a pragmatic blend of FP and OOP: favour pure functions, immutability, and side-effect-free core logic, while using objects to model cohesive state and operational boundaries.",
+      "definition": "Prefer a pragmatic blend of FP and OOP: favour pure functions, immutability, and side-effect-free core logic, while using objects to model cohesive state and operational boundaries.",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-05-02",
+      "term": "Core logic is deterministic where possible. No I/O. No",
+      "label": "Core logic is deterministic where possible. No I/O. No env/time/random reads.",
+      "definition": "Core logic is deterministic where possible. No I/O. No env/time/random reads.",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-05-03",
+      "term": "Edges do I/O: files, subprocess, network, DB, logging, config reads",
+      "label": "Edges do I/O: files, subprocess, network, DB, logging, config reads.",
+      "definition": "Edges do I/O: files, subprocess, network, DB, logging, config reads.",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-05-04",
+      "term": "Dependencies flow inward: edge code may depend on core; core does not",
+      "label": "Dependencies flow inward: edge code may depend on core; core does not depend on edge code.",
+      "definition": "Dependencies flow inward: edge code may depend on core; core does not depend on edge code.",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-05-05",
+      "term": "Strategy and dependency injection patterns to improve clarity and",
+      "label": "Prefer strategy and dependency injection patterns to improve clarity and testability.",
+      "definition": "Prefer strategy and dependency injection patterns to improve clarity and testability.",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-05-06",
+      "term": "Dependency injection default: constructor injection. Dependencies are",
+      "label": "Dependency injection default: constructor injection. Dependencies are explicit in function/method signatures. Avoid service locators and global singletons in core logic.",
+      "definition": "Dependency injection default: constructor injection. Dependencies are explicit in function/method signatures. Avoid service locators and global singletons in core logic.",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-05-07",
+      "term": "Functions where classes are not really nessasary; use classes when",
+      "label": "Prefer functions where classes are not really nessasary; use classes when they reduce complexity (invariants, meaningful state, clearer orchestration, less argument threading, polymorphism).",
+      "definition": "Prefer functions where classes are not really nessasary; use classes when they reduce complexity (invariants, meaningful state, clearer orchestration, less argument threading, polymorphism).",
+      "sources": [
+        "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
+        "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
+      ],
+      "example_ref": "code_standards_md_CS_05"
+    },
+    {
+      "id": "CS-06-01",
+      "term": "Pure functions; avoid mutation; introduce mutation only when it is",
+      "label": "Prefer pure functions; avoid mutation; introduce mutation only when it is vital for clarity.",
+      "definition": "Prefer pure functions; avoid mutation; introduce mutation only when it is vital for clarity.",
+      "sources": [
+        "CODE_STANDARDS.md §6) Pure functions and mutation",
+        "CODE_STANDARDS.examples.md §6) Pure functions and mutation"
+      ],
+      "example_ref": "code_standards_md_CS_06"
+    },
+    {
+      "id": "CS-06-02",
+      "term": "Side effects (I/O, logging, DB access) out of core logic; isolate",
+      "label": "Keep side effects (I/O, logging, DB access) out of core logic; isolate side-effectful code.",
+      "definition": "Keep side effects (I/O, logging, DB access) out of core logic; isolate side-effectful code.",
+      "sources": [
+        "CODE_STANDARDS.md §6) Pure functions and mutation",
+        "CODE_STANDARDS.examples.md §6) Pure functions and mutation"
+      ],
+      "example_ref": "code_standards_md_CS_06"
+    },
+    {
+      "id": "CS-07-01",
+      "term": "Small functions with a single responsibility",
+      "label": "Prefer small functions with a single responsibility.",
+      "definition": "Prefer small functions with a single responsibility.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-02",
+      "term": "Early returns",
+      "label": "Prefer early returns.",
+      "definition": "Prefer early returns.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-03",
+      "term": "The latest pythonic language features to improve clarity",
+      "label": "Prefer the latest pythonic language features to improve clarity.",
+      "definition": "Prefer the latest pythonic language features to improve clarity.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-04",
+      "term": "Ceiling: <10 lines in the function body",
+      "label": "Default ceiling: <10 lines in the function body (exclude signature and docstring; include comments).",
+      "definition": "Default ceiling: <10 lines in the function body (exclude signature and docstring; include comments).",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-05",
+      "term": "Helper functions to reduce function size and improve readability",
+      "label": "Use helper functions to reduce function size and improve readability.",
+      "definition": "Use helper functions to reduce function size and improve readability.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-06",
+      "term": "Extract named helpers that encode rules/transforms",
+      "label": "Extract named helpers that encode rules/transforms.",
+      "definition": "Extract named helpers that encode rules/transforms.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-07",
+      "term": "Break up nested loops or conditionals into helper functions",
+      "label": "Break up nested loops or conditionals into helper functions.",
+      "definition": "Break up nested loops or conditionals into helper functions.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-08",
+      "term": "Meaningful function and variable names over comments",
+      "label": "Use meaningful function and variable names over comments.",
+      "definition": "Use meaningful function and variable names over comments.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-09",
+      "term": "Avoid deep nesting (Never Nester)",
+      "label": "Avoid deep nesting (Never Nester).",
+      "definition": "Avoid deep nesting (Never Nester).",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-10",
+      "term": "Each function does either business logic or exception handling, never",
+      "label": "Each function does either business logic or exception handling, never both.",
+      "definition": "Each function does either business logic or exception handling, never both.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-11",
+      "term": "Order functions so callees appear before callers: a function appears",
+      "label": "Order functions so callees appear before callers: a function appears before the first function that calls it.",
+      "definition": "Order functions so callees appear before callers: a function appears before the first function that calls it.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-12",
+      "term": "Group helper functions immediately above their first caller",
+      "label": "Group helper functions immediately above their first caller.",
+      "definition": "Group helper functions immediately above their first caller.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-13",
+      "term": "Within each group, order helpers in the sequence they are first",
+      "label": "Within each group, order helpers in the sequence they are first called by their caller.",
+      "definition": "Within each group, order helpers in the sequence they are first called by their caller.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-14",
+      "term": "Public functions and public methods: one-line docstring if name +",
+      "label": "Public functions and public methods: one-line docstring if name + signature + docstring fully express intent.",
+      "definition": "Public functions and public methods: one-line docstring if name + signature + docstring fully express intent.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-15",
+      "term": "Helpers: docstring only when the name does not encode the",
+      "label": "Helpers: docstring only when the name does not encode the rule/transform or the logic is non-obvious.",
+      "definition": "Helpers: docstring only when the name does not encode the rule/transform or the logic is non-obvious.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-16",
+      "term": "One-line docstrings",
+      "label": "Prefer one-line docstrings.",
+      "definition": "Prefer one-line docstrings.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-07-17",
+      "term": "Accept multi-line docstrings only when the logic is non-obvious",
+      "label": "Accept multi-line docstrings only when the logic is non-obvious.",
+      "definition": "Accept multi-line docstrings only when the logic is non-obvious.",
+      "sources": [
+        "CODE_STANDARDS.md §7) Functions, readability, and ordering",
+        "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
+      ],
+      "example_ref": "code_standards_md_CS_07"
+    },
+    {
+      "id": "CS-08-01",
+      "term": "Iterator pipelines + comprehensions -- materialized contracts are",
+      "label": "Prefer iterator pipelines + comprehensions -- materialized contracts are **not** preferred - but use comprehensions only when the contract explicitly requires materialized collections.",
+      "definition": "Prefer iterator pipelines + comprehensions -- materialized contracts are **not** preferred - but use comprehensions only when the contract explicitly requires materialized collections.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-02",
+      "term": "First try named helper functions and iterator composition",
+      "label": "First try named helper functions and iterator composition:",
+      "definition": "First try named helper functions and iterator composition:",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-03",
+      "term": "`(_mk_foo(x) for x in _iter_bar(y))`",
+      "label": "`(_mk_foo(x) for x in _iter_bar(y))`",
+      "definition": "`(_mk_foo(x) for x in _iter_bar(y))`",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-04",
+      "term": "`(x for x in items if _is_valid(x))`",
+      "label": "`(x for x in items if _is_valid(x))`",
+      "definition": "`(x for x in items if _is_valid(x))`",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-05",
+      "term": "Returning iterator composition, eg",
+      "label": "Prefer returning iterator composition, eg:",
+      "definition": "Prefer returning iterator composition, eg:",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-06",
+      "term": "`return (_mk_foo(x) for x in _iter_bar(y))`",
+      "label": "`return (_mk_foo(x) for x in _iter_bar(y))`",
+      "definition": "`return (_mk_foo(x) for x in _iter_bar(y))`",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-07",
+      "term": "Generator functions (`yield`, `send`) when they are demonstrably",
+      "label": "Use generator functions (`yield`, `send`) when they are demonstrably clearer.",
+      "definition": "Use generator functions (`yield`, `send`) when they are demonstrably clearer.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-08",
+      "term": "Functions that return `Iterator[T]` rather than concrete containers /",
+      "label": "Prefer functions that return `Iterator[T]` rather than concrete containers / materialised collections.",
+      "definition": "Prefer functions that return `Iterator[T]` rather than concrete containers / materialised collections.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-09",
+      "term": "Materialise at the edge only when required",
+      "label": "Materialise at the edge only when required:",
+      "definition": "Materialise at the edge only when required:",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-10",
+      "term": "`items = tuple(_iter_items(...))` only when the contract requires a",
+      "label": "`items = tuple(_iter_items(...))` only when the contract requires a materialised sequence -- materialised contracts are **not** preferred.",
+      "definition": "`items = tuple(_iter_items(...))` only when the contract requires a materialised sequence -- materialised contracts are **not** preferred.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-11",
+      "term": "`items = frozenset(_iter_items(...))` only when the contract requires",
+      "label": "`items = frozenset(_iter_items(...))` only when the contract requires a materialised set.",
+      "definition": "`items = frozenset(_iter_items(...))` only when the contract requires a materialised set.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-12",
+      "term": "`items = list(_iter_items(...))` only when the contract requires a",
+      "label": "`items = list(_iter_items(...))` only when the contract requires a list",
+      "definition": "`items = list(_iter_items(...))` only when the contract requires a list",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-13",
+      "term": "If multi-pass consumption is expected, materialise at the edge",
+      "label": "If multi-pass consumption is expected, materialise at the edge.",
+      "definition": "If multi-pass consumption is expected, materialise at the edge.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-14",
+      "term": "Construct using comprehension, or materialise at the edge from an",
+      "label": "Construct using comprehension, or materialise at the edge from an iterator or generator function. Only at edge, and only when unavoidable.",
+      "definition": "Construct using comprehension, or materialise at the edge from an iterator or generator function. Only at edge, and only when unavoidable.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-15",
+      "term": "Avoid mutation, prefer to create new variable for each step",
+      "label": "Avoid mutation, prefer to create new variable for each step.",
+      "definition": "Avoid mutation, prefer to create new variable for each step.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-16",
+      "term": "Iterators to containers, where possible",
+      "label": "Prefer Iterators to containers, where possible.",
+      "definition": "Prefer Iterators to containers, where possible.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-17",
+      "term": "Materialised containers only when the contract requires mutability or",
+      "label": "Allow materialised containers only when the contract requires mutability or multi-pass consumption.",
+      "definition": "Allow materialised containers only when the contract requires mutability or multi-pass consumption.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-18",
+      "term": "Avoid mutating existing containers, such as with `+` or",
+      "label": "Avoid mutating existing containers, such as with `+` or `.append()`/`.extend()` or `dict.update()` or `set.add()` or `list.insert()`.",
+      "definition": "Avoid mutating existing containers, such as with `+` or `.append()`/`.extend()` or `dict.update()` or `set.add()` or `list.insert()`.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-08-19",
+      "term": "Creating new containers using comprehension instead of mutating",
+      "label": "Prefer creating new containers using comprehension instead of mutating existing ones.",
+      "definition": "Prefer creating new containers using comprehension instead of mutating existing ones.",
+      "sources": [
+        "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-09-01",
+      "term": "`@dataclass(frozen=True, slots=True)` for domain/value objects",
+      "label": "`@dataclass(frozen=True, slots=True)` for domain/value objects (immutability by default; `slots=True` when it stays ergonomic)",
+      "definition": "`@dataclass(frozen=True, slots=True)` for domain/value objects (immutability by default; `slots=True` when it stays ergonomic)",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-02",
+      "term": "Pydantic models at boundaries when validation/parsing is the point",
+      "label": "Pydantic models at boundaries when validation/parsing is the point",
+      "definition": "Pydantic models at boundaries when validation/parsing is the point",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-03",
+      "term": "`TypedDict` only when a `dict` is the required type",
+      "label": "`TypedDict` only when a `dict` is the required type",
+      "definition": "`TypedDict` only when a `dict` is the required type",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-04",
+      "term": "`Iterator[T]` whenever possible",
+      "label": "Prefer to use `Iterator[T]` whenever possible.",
+      "definition": "Prefer to use `Iterator[T]` whenever possible.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-05",
+      "term": "Immutable values by default",
+      "label": "Prefer immutable values by default.",
+      "definition": "Prefer immutable values by default.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-06",
+      "term": "Immutable collections (`tuple[T, ...]`, `frozenset[T]`) when",
+      "label": "Prefer immutable collections (`tuple[T, ...]`, `frozenset[T]`) when `Iterator[T]` is not practical - materialised collections are **not** preferred.",
+      "definition": "Prefer immutable collections (`tuple[T, ...]`, `frozenset[T]`) when `Iterator[T]` is not practical - materialised collections are **not** preferred.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-07",
+      "term": "Avoid `set[T]` or `list[T]`; immutability prevents accidental",
+      "label": "Avoid `set[T]` or `list[T]`; immutability prevents accidental mutation; performance is important and generally improved with immutable types.",
+      "definition": "Avoid `set[T]` or `list[T]`; immutability prevents accidental mutation; performance is important and generally improved with immutable types.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-08",
+      "term": "`set[T]` or `list[T]` or `dict[K, V]` when the contract requires it",
+      "label": "only allow `set[T]` or `list[T]` or `dict[K, V]` when the contract requires it, or when you have ruled out all other options for demonstrably clearer code.",
+      "definition": "only allow `set[T]` or `list[T]` or `dict[K, V]` when the contract requires it, or when you have ruled out all other options for demonstrably clearer code.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-09",
+      "term": "`enum.StrEnum` for domain enums crossing module boundaries",
+      "label": "Use `enum.StrEnum` for domain enums crossing module boundaries.",
+      "definition": "Use `enum.StrEnum` for domain enums crossing module boundaries.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-09-10",
+      "term": "Do not pass raw strings when an enum is the real type",
+      "label": "Do not pass raw strings when an enum is the real type.",
+      "definition": "Do not pass raw strings when an enum is the real type.",
+      "sources": [
+        "CODE_STANDARDS.md §9) Data, immutability, and models",
+        "CODE_STANDARDS.examples.md §9) Data, immutability, and models"
+      ],
+      "example_ref": "code_standards_md_CS_09"
+    },
+    {
+      "id": "CS-10-01",
+      "term": "Top-level imports (normal Python style)",
+      "label": "Prefer top-level imports (normal Python style).",
+      "definition": "Prefer top-level imports (normal Python style).",
+      "sources": [
+        "CODE_STANDARDS.md §10) Imports",
+        "CODE_STANDARDS.examples.md §10) Imports"
+      ],
+      "example_ref": "code_standards_md_CS_10"
+    },
+    {
+      "id": "CS-10-02",
+      "term": "Avoid local imports except in rare cases",
+      "label": "Avoid local imports except in rare cases (breaking import cycles, optional/heavy dependencies).",
+      "definition": "Avoid local imports except in rare cases (breaking import cycles, optional/heavy dependencies).",
+      "sources": [
+        "CODE_STANDARDS.md §10) Imports",
+        "CODE_STANDARDS.examples.md §10) Imports"
+      ],
+      "example_ref": "code_standards_md_CS_10"
+    },
+    {
+      "id": "CS-11-01",
+      "term": "Modern stdlib tools",
+      "label": "Prefer modern stdlib tools (`pathlib`, `itertools`, `functools`, `collections.abc`, `enum`).",
+      "definition": "Prefer modern stdlib tools (`pathlib`, `itertools`, `functools`, `collections.abc`, `enum`).",
+      "sources": [
+        "CODE_STANDARDS.md §11) Preferred libraries"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-11-02",
+      "term": "`typer` [https://typer.tiangolo.com/] for CLI utilities",
+      "label": "Prefer `typer` [https://typer.tiangolo.com/] for CLI utilities.",
+      "definition": "Prefer `typer` [https://typer.tiangolo.com/] for CLI utilities.",
+      "sources": [
+        "CODE_STANDARDS.md §11) Preferred libraries"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-11-03",
+      "term": "`rich` [https://rich.readthedocs.io/] for rich output in CLIs",
+      "label": "Prefer `rich` [https://rich.readthedocs.io/] for rich output in CLIs.",
+      "definition": "Prefer `rich` [https://rich.readthedocs.io/] for rich output in CLIs.",
+      "sources": [
+        "CODE_STANDARDS.md §11) Preferred libraries"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-11-04",
+      "term": "Add third-party dependencies only when the clarity win is real",
+      "label": "Add third-party dependencies only when the clarity win is real.",
+      "definition": "Add third-party dependencies only when the clarity win is real.",
+      "sources": [
+        "CODE_STANDARDS.md §11) Preferred libraries"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-11-05",
+      "term": "Dataframe libraries when needed; if you need one, prefer `polars`",
+      "label": "Only use dataframe libraries when needed; if you need one, prefer `polars` over `pandas`.",
+      "definition": "Only use dataframe libraries when needed; if you need one, prefer `polars` over `pandas`.",
+      "sources": [
+        "CODE_STANDARDS.md §11) Preferred libraries"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-12-01",
+      "term": "Type Hints to make code easier to understand and harder to misuse",
+      "label": "Use Type Hints to make code easier to understand and harder to misuse.",
+      "definition": "Use Type Hints to make code easier to understand and harder to misuse.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-02",
+      "term": "Avoid overly generic types like `Any` or `object` unless unavoidable",
+      "label": "Avoid overly generic types like `Any` or `object` unless unavoidable and the boundary is explicit.",
+      "definition": "Avoid overly generic types like `Any` or `object` unless unavoidable and the boundary is explicit.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-03",
+      "term": "`typing.Protocol` for interfaces",
+      "label": "Prefer `typing.Protocol` for interfaces.",
+      "definition": "Prefer `typing.Protocol` for interfaces.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-04",
+      "term": "Avoid `# type: ignore`",
+      "label": "Avoid `# type: ignore`.",
+      "definition": "Avoid `# type: ignore`.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-05",
+      "term": "PEP 695 type parameters: `def f[T](x: T) -> T: ...`",
+      "label": "PEP 695 type parameters: `def f[T](x: T) -> T: ...`",
+      "definition": "PEP 695 type parameters: `def f[T](x: T) -> T: ...`",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-06",
+      "term": "`type` aliases and `typing.TypeAliasType` for clear, named contracts",
+      "label": "`type` aliases and `typing.TypeAliasType` for clear, named contracts",
+      "definition": "`type` aliases and `typing.TypeAliasType` for clear, named contracts",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-07",
+      "term": "`typing.Self` for methods returning the receiver type",
+      "label": "`typing.Self` for methods returning the receiver type",
+      "definition": "`typing.Self` for methods returning the receiver type",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-08",
+      "term": "`typing.override` when overriding base class methods",
+      "label": "`typing.override` when overriding base class methods",
+      "definition": "`typing.override` when overriding base class methods",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-09",
+      "term": "`typing.final` to prevent subclassing/overrides when that is part of",
+      "label": "`typing.final` to prevent subclassing/overrides when that is part of the contract",
+      "definition": "`typing.final` to prevent subclassing/overrides when that is part of the contract",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-10",
+      "term": "`Iterable[T]` over `tuple[T]` or `list[T]`, unless you need",
+      "label": "Prefer `Iterable[T]` over `tuple[T]` or `list[T]`, unless you need indexing/len/multi-pass; then use `Sequence[T]`.",
+      "definition": "Prefer `Iterable[T]` over `tuple[T]` or `list[T]`, unless you need indexing/len/multi-pass; then use `Sequence[T]`.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-11",
+      "term": "TypedDict classes or `Mapping[K, V]` over `dict[K, V]`; avoid",
+      "label": "Prefer TypedDict classes or `Mapping[K, V]` over `dict[K, V]`; avoid mutation or concrete dict methods.",
+      "definition": "Prefer TypedDict classes or `Mapping[K, V]` over `dict[K, V]`; avoid mutation or concrete dict methods.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-12",
+      "term": "TypedDict classes over `Mapping[K, V]` when the required type is",
+      "label": "Prefer TypedDict classes over `Mapping[K, V]` when the required type is explicitly required.",
+      "definition": "Prefer TypedDict classes over `Mapping[K, V]` when the required type is explicitly required.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-13",
+      "term": "`Iterator[T]` for streaming/lazy contracts",
+      "label": "Prefer `Iterator[T]` for streaming/lazy contracts (do not return `Iterable[T]`).",
+      "definition": "Prefer `Iterator[T]` for streaming/lazy contracts (do not return `Iterable[T]`).",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-14",
+      "term": "Functions returning `Iterator[T]` may be implemented with",
+      "label": "functions returning `Iterator[T]` may be implemented with comprehension, or with a generator functions using `yield`.",
+      "definition": "functions returning `Iterator[T]` may be implemented with comprehension, or with a generator functions using `yield`.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-15",
+      "term": "`Generator[YieldType, SendType, ReturnType]` only when the contract",
+      "label": "Allow `Generator[YieldType, SendType, ReturnType]` only when the contract requires it, or when you have ruled out all other options for cleaner code.",
+      "definition": "Allow `Generator[YieldType, SendType, ReturnType]` only when the contract requires it, or when you have ruled out all other options for cleaner code.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-16",
+      "term": "`tuple[T, ...]` or `frozenset[T]` for materialised contracts",
+      "label": "Prefer `tuple[T, ...]` or `frozenset[T]` for materialised contracts (immutable, reusable) - materialised contracts are **not** preferred.",
+      "definition": "Prefer `tuple[T, ...]` or `frozenset[T]` for materialised contracts (immutable, reusable) - materialised contracts are **not** preferred.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-17",
+      "term": "`list[T]` or `set[T]` only when the contract explicitly requires",
+      "label": "Allow `list[T]` or `set[T]` only when the contract explicitly requires mutability.",
+      "definition": "Allow `list[T]` or `set[T]` only when the contract explicitly requires mutability.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-18",
+      "term": "`Iterator[T]` or `Generator[YieldType, SendType, ReturnType]` for",
+      "label": "Prefer `Iterator[T]` or `Generator[YieldType, SendType, ReturnType]` for lazy/streaming.",
+      "definition": "Prefer `Iterator[T]` or `Generator[YieldType, SendType, ReturnType]` for lazy/streaming.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-19",
+      "term": "Avoid `Iterable[T]` and `Sequence[T]` and `Mapping[K, V]` in return",
+      "label": "Avoid `Iterable[T]` and `Sequence[T]` and `Mapping[K, V]` in return hints; use the actual types returned, such as `Iterator[T]`, and so on.",
+      "definition": "Avoid `Iterable[T]` and `Sequence[T]` and `Mapping[K, V]` in return hints; use the actual types returned, such as `Iterator[T]`, and so on.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-20",
+      "term": "Return TypedDict class over `dict[K, V]` where keys are fixed",
+      "label": "Prefer return TypedDict class over `dict[K, V]` where keys are fixed.",
+      "definition": "Prefer return TypedDict class over `dict[K, V]` where keys are fixed.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-21",
+      "term": "`tuple[T, ...]` or `frozenset[T]` when the contract requires material",
+      "label": "Prefer `tuple[T, ...]` or `frozenset[T]` when the contract requires material sequences.  Materialised contracts are **not** preferred.",
+      "definition": "Prefer `tuple[T, ...]` or `frozenset[T]` when the contract requires material sequences.  Materialised contracts are **not** preferred.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-12-22",
+      "term": "`list[T]` or `set[T]` or `dict[K, V]` only when the contract requires",
+      "label": "Allow `list[T]` or `set[T]` or `dict[K, V]` only when the contract requires mutable types.",
+      "definition": "Allow `list[T]` or `set[T]` or `dict[K, V]` only when the contract requires mutable types.",
+      "sources": [
+        "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
+        "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
+      ],
+      "example_ref": "code_standards_md_CS_12"
+    },
+    {
+      "id": "CS-13-01",
+      "term": "Decorators when they clarify intent",
+      "label": "Use decorators when they clarify intent (e.g., `@property`, `@dataclass`, `@override`).",
+      "definition": "Use decorators when they clarify intent (e.g., `@property`, `@dataclass`, `@override`).",
+      "sources": [
+        "CODE_STANDARDS.md §13) Decorators",
+        "CODE_STANDARDS.examples.md §13) Decorators"
+      ],
+      "example_ref": "code_standards_md_CS_13"
+    },
+    {
+      "id": "CS-13-02",
+      "term": "Define and use custom decorators when it is demonstrably clearer",
+      "label": "Define and use custom decorators when it is demonstrably clearer.",
+      "definition": "Define and use custom decorators when it is demonstrably clearer.",
+      "sources": [
+        "CODE_STANDARDS.md §13) Decorators",
+        "CODE_STANDARDS.examples.md §13) Decorators"
+      ],
+      "example_ref": "code_standards_md_CS_13"
+    },
+    {
+      "id": "CS-13-03",
+      "term": "Avoid `@staticmethod` and `@classmethod` unless they are truly",
+      "label": "Avoid `@staticmethod` and `@classmethod` unless they are truly necessary for clarity or performance.",
+      "definition": "Avoid `@staticmethod` and `@classmethod` unless they are truly necessary for clarity or performance.",
+      "sources": [
+        "CODE_STANDARDS.md §13) Decorators",
+        "CODE_STANDARDS.examples.md §13) Decorators"
+      ],
+      "example_ref": "code_standards_md_CS_13"
+    },
+    {
+      "id": "CS-14-01",
+      "term": "Context managers for resource lifetimes",
+      "label": "Use context managers for resource lifetimes (files, locks, transactions, etc.).",
+      "definition": "Use context managers for resource lifetimes (files, locks, transactions, etc.).",
+      "sources": [
+        "CODE_STANDARDS.md §14) Context managers",
+        "CODE_STANDARDS.examples.md §14) Context managers"
+      ],
+      "example_ref": "code_standards_md_CS_14"
+    },
+    {
+      "id": "CS-14-02",
+      "term": "Context managers over try/finally blocks",
+      "label": "Prefer context managers over try/finally blocks.",
+      "definition": "Prefer context managers over try/finally blocks.",
+      "sources": [
+        "CODE_STANDARDS.md §14) Context managers",
+        "CODE_STANDARDS.examples.md §14) Context managers"
+      ],
+      "example_ref": "code_standards_md_CS_14"
+    },
+    {
+      "id": "CS-14-03",
+      "term": "Define custom context managers when they clarify resource management",
+      "label": "Define custom context managers when they clarify resource management.",
+      "definition": "Define custom context managers when they clarify resource management.",
+      "sources": [
+        "CODE_STANDARDS.md §14) Context managers",
+        "CODE_STANDARDS.examples.md §14) Context managers"
+      ],
+      "example_ref": "code_standards_md_CS_14"
+    },
+    {
+      "id": "CS-15-01",
+      "term": "Standard exceptions where appropriate",
+      "label": "Prefer standard exceptions where appropriate.",
+      "definition": "Prefer standard exceptions where appropriate.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-02",
+      "term": "Define feature-specific exceptions only when it makes the code",
+      "label": "Define feature-specific exceptions only when it makes the code simpler and more coherent.",
+      "definition": "Define feature-specific exceptions only when it makes the code simpler and more coherent.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-03",
+      "term": "Try/except only when required: to handle an exception, add vital",
+      "label": "Use Try/except only when required: to handle an exception, add vital context, or translate at a boundary.",
+      "definition": "Use Try/except only when required: to handle an exception, add vital context, or translate at a boundary.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-04",
+      "term": "Pass-through (let exceptions propagate) unless you are handling",
+      "label": "Prefer pass-through (let exceptions propagate) unless you are handling, adding context, or translating.",
+      "definition": "Prefer pass-through (let exceptions propagate) unless you are handling, adding context, or translating.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-05",
+      "term": "Max 1 try/except per function",
+      "label": "Max 1 try/except per function.",
+      "definition": "Max 1 try/except per function.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-06",
+      "term": "One statement in `try` body and one statement in `except` body",
+      "label": "One statement in `try` body and one statement in `except` body; define additional functions as required.",
+      "definition": "One statement in `try` body and one statement in `except` body; define additional functions as required.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-07",
+      "term": "Every try/except block lives in a dedicated exception safeguarding",
+      "label": "Every try/except block lives in a dedicated exception safeguarding function (no try/except in business logic functions).",
+      "definition": "Every try/except block lives in a dedicated exception safeguarding function (no try/except in business logic functions).",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-08",
+      "term": "Keeping the original exception type; add context via",
+      "label": "Prefer keeping the original exception type; add context via `Exception.add_note(...)` where appropriate.",
+      "definition": "Prefer keeping the original exception type; add context via `Exception.add_note(...)` where appropriate.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-15-09",
+      "term": "`raise ... from exc` when translating exceptions at the boundary",
+      "label": "Use `raise ... from exc` when translating exceptions at the boundary.",
+      "definition": "Use `raise ... from exc` when translating exceptions at the boundary.",
+      "sources": [
+        "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
+        "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
+      ],
+      "example_ref": "code_standards_md_CS_15"
+    },
+    {
+      "id": "CS-16",
+      "term": "Tests",
+      "label": "16) Tests",
+      "definition": "Follow `CODE_STANDARDS.pytest.md` when you write pytest tests.\nFollow `TDD_PROCESS.md` for the test writing cycle and deferred tests.",
+      "sources": [
+        "CODE_STANDARDS.md §16) Tests"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "CS-17-01",
+      "term": "`async`/`await` only when concurrency is required",
+      "label": "Use `async`/`await` only when concurrency is required.",
+      "definition": "Use `async`/`await` only when concurrency is required.",
+      "sources": [
+        "CODE_STANDARDS.md §17) Concurrency",
+        "CODE_STANDARDS.examples.md §17) Concurrency"
+      ],
+      "example_ref": "code_standards_md_CS_17"
+    },
+    {
+      "id": "CS-17-02",
+      "term": "In asyncio code, prefer `asyncio.TaskGroup` for parallel tasks",
+      "label": "In asyncio code, prefer `asyncio.TaskGroup` for parallel tasks.",
+      "definition": "In asyncio code, prefer `asyncio.TaskGroup` for parallel tasks.",
+      "sources": [
+        "CODE_STANDARDS.md §17) Concurrency",
+        "CODE_STANDARDS.examples.md §17) Concurrency"
+      ],
+      "example_ref": "code_standards_md_CS_17"
+    },
+    {
+      "id": "CS-17-03",
+      "term": "When asyncio is unsuitable, use threads/`concurrent.futures`",
+      "label": "When asyncio is unsuitable, use threads/`concurrent.futures`.",
+      "definition": "When asyncio is unsuitable, use threads/`concurrent.futures`.",
+      "sources": [
+        "CODE_STANDARDS.md §17) Concurrency",
+        "CODE_STANDARDS.examples.md §17) Concurrency"
+      ],
+      "example_ref": "code_standards_md_CS_17"
+    },
+    {
+      "id": "CS-18-01",
+      "term": "Occasionally operational constraints may override “latest features”",
+      "label": "Occasionally operational constraints may override “latest features”.",
+      "definition": "Occasionally operational constraints may override “latest features”.",
+      "sources": [
+        "CODE_STANDARDS.md §18) When to break a preference",
+        "CODE_STANDARDS.examples.md §18) When to break a preference"
+      ],
+      "example_ref": "code_standards_md_CS_18"
+    },
+    {
+      "id": "CS-18-02",
+      "term": "Performance is a reason only after measuring, and should not reduce",
+      "label": "Performance is a reason only after measuring, and should not reduce clarity unless the win is real and necessary.",
+      "definition": "Performance is a reason only after measuring, and should not reduce clarity unless the win is real and necessary.",
+      "sources": [
+        "CODE_STANDARDS.md §18) When to break a preference",
+        "CODE_STANDARDS.examples.md §18) When to break a preference"
+      ],
+      "example_ref": "code_standards_md_CS_18"
+    },
+    {
+      "id": "CS-18-03",
+      "term": "When in doubt, the simplest and most obvious option is the one that",
+      "label": "When in doubt, the simplest and most obvious option is the one that results in the code.",
+      "definition": "When in doubt, the simplest and most obvious option is the one that results in the code.",
+      "sources": [
+        "CODE_STANDARDS.md §18) When to break a preference",
+        "CODE_STANDARDS.examples.md §18) When to break a preference"
+      ],
+      "example_ref": "code_standards_md_CS_18"
+    },
+    {
+      "id": "CS-18-04",
+      "term": "Preferences are in service of keeping code minimal, readable, and",
+      "label": "Preferences are in service of keeping code minimal, readable, and testable.",
+      "definition": "Preferences are in service of keeping code minimal, readable, and testable.",
+      "sources": [
+        "CODE_STANDARDS.md §18) When to break a preference",
+        "CODE_STANDARDS.examples.md §18) When to break a preference"
+      ],
+      "example_ref": "code_standards_md_CS_18"
+    }
+  ],
+  "src_examples": {
+    "code_standards_md_CS_00": "```python\n# Correctness > Clarity > Simplicity > Performance\n\n# Bad: clever but unclear\nresult = [x for x in data if (lambda y: y > 0 and y % 2)(x)]\n\n# Good: correct, clear, simple\ndef is_positive_even(n: int) -> bool:\n    return n > 0 and n % 2 == 0\n\ndef _iter_positive_evens(nums: Iterable[int]) -> Iterator[int]:\n    return (n for n in nums if is_positive_even(n))\n\nresult = list(_iter_positive_evens([1, 2, 3, -4]))\n```",
+    "code_standards_md_CS_01": "```python\n# Bad: generic names, no domain meaning\ndef process(x):\n    return x * 2\n\n# Good: encodes intent, Australian English\ndef calculate_behaviour_score(raw_score: int) -> int:\n    \"\"\"Double the raw behaviour score.\"\"\"\n    return raw_score * 2\n```",
+    "code_standards_md_CS_02": "```python\n# Use Python 3.14 features when they improve clarity\nfrom __future__ import annotations\nfrom collections.abc import Sequence\n\n# PEP 695 type parameters\ndef first[T](items: Sequence[T]) -> T:\n    return items[0]\n\n# Type alias\ntype UserId = int\ntype UserMap = Mapping[UserId, str]\n```",
+    "code_standards_md_CS_03": "See `TDD_PROCESS.md` for roles and review steps.",
+    "code_standards_md_CS_04": "See `TDD_PROCESS.md` for the TDD steps and quality gate.",
+    "code_standards_md_CS_05": "```python\n\ntype OrderId = str\n\nclass OrderRepository(Protocol):\n    def get_price(self, order_id: OrderId) -> int: ...\n    def put_price(self, order_id: OrderId, price: int) -> None: ...\n\n# Core: pure, deterministic\ndef calculate_discount(price: int, rate: float) -> int:\n    return int(price * (1.0 - rate))\n\n# Edge: I/O, side effects\ndef apply_discount_to_order(orders: OrderRepository, order_id: OrderId, rate: float) -> None:\n    price = orders.get_price(order_id)  # I/O at edge\n    discounted = calculate_discount(price, rate)  # Pure core\n    orders.put_price(order_id, discounted)  # I/O at edge\n```",
+    "code_standards_md_CS_06": "```python\n# Bad: mutation\ndef add_tax(prices: list[int], rate: float) -> list[int]:\n    for i in range(len(prices)):\n        prices[i] = int(prices[i] * (1.0 + rate))\n    return prices\n\n# Good: pure, immutable, single responsibility\ndef add_tax(price: int, rate: float) -> int:\n    return int(price * (1.0 + rate))\n\ndef iter_add_tax(prices: Iterable[int], rate: float) -> Iterator[int]:\n    return (add_tax(p, rate) for p in prices)\n\ndef add_tax_to_prices(prices: tuple[int, ...], rate: float) -> tuple[int, ...]:\n    return tuple(iter_add_tax(prices, rate))\n```",
+    "code_standards_md_CS_07": "### Functions\n\n```python\n# Bad: nested, long, multiple responsibilities\ndef process(data):\n    result = []\n    for item in data:\n        if item > 0:\n            for i in range(item):\n                if i % 2 == 0:\n                    result.append(i * 2)\n    return result\n\n# Good: small, single responsibility, Never Nester\ndef _is_even(n: int) -> bool:\n    return n % 2 == 0\n\ndef _evens_integers(integers: Iterable[int]) -> Iterator[int]:\n    return (i for i in integers if _is_even(i))\n\ndef _double(n: int) -> int:\n    return n * 2\n\ndef _double_ints(integers: Iterable[int]) -> Iterator[int]:\n    return (_double(i) for i in integers)\n\ndef double_positive_evens(integers: Sequence[int, ...]) -> Iterator[int, ...]:\n    return (_double_ints(_evens_integers(integers)))\n```\n\n### Ordering\n\n```python\n# Callee-first: helpers appear before their first caller\n\ndef _validate(x: int) -> int:\n    if x < 0:\n        raise ValueError(\"negative not allowed\")\n    return x\n\ndef _transform(x: int) -> int:\n    return x * 2\n\ndef valid_transform(x: int) -> int:\n    return _transform(_validate(x))\n\ndef main() -> int:\n    return valid_transform(5)\n```\n\n### Docstrings\n\n```python\n# Public: docstring when name doesn't fully express intent\ndef calculate_net_total(subtotal: int, tax_rate: float) -> int:\n    \"\"\"Calculate net total including tax, rounded to nearest cent.\"\"\"\n    return int(subtotal * (1.0 + tax_rate))\n\n# Helper: no docstring when name encodes the rule\ndef _is_positive(n: int) -> bool:\n    return n > 0\n```",
+    "code_standards_md_CS_09": "```python\nfrom dataclasses import dataclass\nfrom enum import StrEnum\n\n# Data modelling\n@dataclass(frozen=True, slots=True)\nclass Order:\n    order_id: str\n    amount: int\n    status: OrderStatus\n\n# Enums for domain types\nclass OrderStatus(StrEnum):\n    PENDING = \"pending\"\n    PAID = \"paid\"\n    SHIPPED = \"shipped\"\n\n# Bad: raw strings\ndef process_order(status: str) -> None:\n    if status == \"paid\":  # Typo-prone\n        ...\n\n# Good: enum\ndef process_order(status: OrderStatus) -> None:\n    if status == OrderStatus.PAID:  # Type-safe\n        ...\n```",
+    "code_standards_md_CS_10": "```python\n# Good: top-level imports\nfrom pathlib import Path\nfrom typing import Iterator\n\ndef read_lines(path: Path) -> Iterator[str]:\n    with path.open() as f:\n        yield from f\n\n# Generally Bad. Ok in Rare exception: local import to break cycle\ndef heavy_operation() -> None:\n    from .optional_module import expensive_function  # Only if needed\n    expensive_function()\n```",
+    "code_standards_md_CS_12": "### Principles\n\n```python\nfrom typing import Protocol, Iterator\n\n# Protocol for interfaces\nclass Discount(Protocol):\n    def apply(self, price: int) -> int: ...\n\nclass PercentageDiscount:\n    def __init__(self, rate: float) -> None:\n        self.rate = rate\n    \n    def apply(self, price: int) -> int:\n        return int(price * (1.0 - self.rate))\n\ndef calculate_total(price: int, discount: Discount) -> int:\n    return discount.apply(price)\n```\n\n### Modern typing features\n\n```python\nfrom typing import Self, override, final\n\n# PEP 695 type parameters\ndef first[T](items: Sequence[T]) -> T:\n    return items[0]\n\n# Self for fluent interfaces\nclass Builder:\n    def with_name(self, name: str) -> Self:\n        self.name = name\n        return self\n\n# override for clarity\nclass Child(Parent):\n    @override\n    def process(self) -> None:\n        ...\n\n# final to prevent overrides\n@final\nclass Immutable:\n    ...\n```\n\n### Parameter type hints\n\n```python\nfrom typing import Iterable, Sequence, Mapping\nfrom collections.abc import Iterator\n\n# Prefer generic for parameters\ndef sum_values(nums: Iterable[int]) -> int:  # Not list[int]\n    return sum(nums)\n\ndef first[T](items: Sequence[T]) -> T:  # When indexing needed\n    return items[0]\n\ndef lookup(mapping: Mapping[str, int], key: str) -> int:  # Not dict\n    return mapping[key]\n```\n\n### Return type contracts\n\n```python\nfrom typing import Iterator\n\n# Streaming contract → Iterator[T]\ndef iter_lines(path: Path) -> Iterator[str]:\n    with path.open() as f:\n        yield from f\n\n# Materialised contract → tuple/frozenset\ndef get_unique_ids(orders: Iterable[Order]) -> frozenset[str]:\n    return frozenset(o.order_id for o in orders)\n\n# Only use list when contract requires it\ndef get_sorted_ids(orders: Iterable[Order]) -> list[str]:\n    return sorted(o.order_id for o in orders)\n```",
+    "code_standards_md_CS_13": "```python\nfrom functools import wraps\nfrom typing import Callable\n\n# Use built-in decorators\n@property\ndef full_name(self) -> str:\n    return f\"{self.first} {self.last}\"\n\n# Define custom when it clarifies intent\ndef log_calls[T](func: Callable[..., T]) -> Callable[..., T]:\n    @wraps(func)\n    def wrapper(*args, **kwargs) -> T:\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n@log_calls\ndef process(x: int) -> int:\n    return x * 2\n```",
+    "code_standards_md_CS_14": "```python\nfrom contextlib import contextmanager\nfrom tempfile import TemporaryDirectory\nfrom pathlib import Path\nimport shutil\n\n# Prefer context managers over try/finally\ndef read_config(path: Path) -> str:\n    with path.open() as f:  # Not try/finally\n        return f.read()\n\n# Define context manager when it clarifies resource management\n@contextmanager\ndef temp_directory():\n    tmp = Path(\"/tmp\") / f\"work_{id(object())}\"\n    tmp.mkdir()\n    try:\n        yield tmp\n    finally:\n        shutil.rmtree(tmp)\n\nwith temp_directory() as tmp:\n    (tmp / \"data.txt\").write_text(\"test\")\n\n# Define context manager class when it clarifies intent\nclass TempDirectory:\n    def __enter__(self):\n        self.path = Path(\"/tmp\") / f\"work_{id(self)}\"\n        self.path.mkdir()\n        return self.path\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        shutil.rmtree(self.path)\n        return False\n\nwith TempDirectory() as tmp:\n    (tmp / \"data.txt\").write_text(\"test\")\n```",
+    "code_standards_md_CS_15": "```python\n# Bad: try/except in business logic\ndef process_file(path: Path) -> str:\n    try:\n        with path.open() as f:\n            return f.read().upper()\n    except FileNotFoundError as e:\n        raise ValueError(f\"Config not found: {path}\") from e\n\n# Ok: exception handling in dedicated helper\ndef _read_file_or_raise(path: Path) -> str:\n    try:\n        return path.read_text()\n    except FileNotFoundError as e:\n        raise ValueError(f\"Config not found: {path}\") from e\n\ndef process_file(path: Path) -> str:\n    return _read_file_or_raise(path).upper()\n\n# Good: add context with add_note (one statement in except)\ndef _add_note(e: Exception, note: str) -> Exception:\n    e.add_note(note)\n    return e\n\ndef validate_config(data: str) -> None:\n    try:\n        _parse_config(data)\n    except ValueError as e:\n        raise _add_note(e, \"Invalid config format\")\n```",
+    "code_standards_md_CS_17": "```python\nimport asyncio\nfrom concurrent.futures import ThreadPoolExecutor\n\n# Use async only when concurrency is required\nasync def fetch_all(urls: tuple[str, ...]) -> tuple[str, ...]:\n    async with asyncio.TaskGroup() as tg:\n        tasks = [tg.create_task(_fetch_one(url)) for url in urls]\n    return tuple(t.result() for t in tasks)\n\n# Use threads when asyncio is unsuitable\ndef process_files(paths: tuple[Path, ...]) -> tuple[str, ...]:\n    with ThreadPoolExecutor() as executor:\n        return tuple(executor.map(_read_file, paths))\n```",
+    "code_standards_md_CS_18": "```python\n# Break preference when it makes code more obvious\n\n# Preference: avoid list, prefer tuple\n# But: when the contract requires a mutable list, use it\ndef get_mutable_buffer() -> list[int]:\n    \"\"\"Return a mutable buffer for caller to modify.\"\"\"\n    return [0, 0, 0]  # Contract requires list\n\n# Preference: no append\n# Bad: building a complex structure where initial comprehension is unclear\n# diligent effort is required to make comprehension clearer here\ndef build_tree(nodes: tuple[Node, ...]) -> list[Node]:\n    \"\"\"Build tree with parent-child links (complex structure).\"\"\"\n    result: list[Node] = []\n    for node in nodes:\n        if _should_include(node):\n            result.append(node)  # append is a code smell\n    return result\n\n# Good: when the contract requires a mutable list, use it\n\nfrom __future__ import annotations\n\nfrom collections.abc import Iterable, Iterator\nfrom dataclasses import dataclass\n\n\n@dataclass(frozen=True, slots=True)\nclass Node:\n    \"\"\"Simple tree node.\"\"\"\n    name: str\n    children: tuple[\"Node\", ...] = ()\n\n\ndef _should_include(node: Node) -> bool:\n    \"\"\"Domain rule: include nodes with a non-empty name.\"\"\"\n    return bool(node.name)\n\n\ndef _iter_included(nodes: Iterable[Node]) -> Iterator[Node]:\n    \"\"\"Lazy filter yielding only included nodes.\"\"\"\n    return (n for n in nodes if _should_include(n))\n\n\ndef build_tree(nodes: Iterable[Node]) -> list[Node]:\n    \"\"\"\n    Materialise the initial tree.\n\n    Returns a *mutable* list because callers need to mutate the collection\n    later—an intentional, contract-driven break from the immutability\n    preference.\n    \"\"\"\n    return list(_iter_included(nodes))\n\n```\n\n\n*End of CODE_STANDARDS Examples*"
+  },
+  "test_criteria": [
+    {
+      "id": "PT-01-01",
+      "term": "Tests are the authoritative spec for behaviour",
+      "label": "Tests are the authoritative spec for behaviour.",
+      "definition": "Tests are the authoritative spec for behaviour.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Non-negotiables"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-01-02",
+      "term": "**One behaviour per test**, with **≤5 executable lines** in the test",
+      "label": "**One behaviour per test**, with **≤5 executable lines** in the test body (setup belongs in fixtures/parametrisation).",
+      "definition": "**One behaviour per test**, with **≤5 executable lines** in the test body (setup belongs in fixtures/parametrisation).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Non-negotiables"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-01-03",
+      "term": "Failure tests are first-class and come **before** success tests",
+      "label": "Failure tests are first-class and come **before** success tests.",
+      "definition": "Failure tests are first-class and come **before** success tests.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Non-negotiables"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-01-04",
+      "term": "Tests must be isolated from external side effects",
+      "label": "Tests must be isolated from external side effects (no network, no git, no persistent filesystem writes).",
+      "definition": "Tests must be isolated from external side effects (no network, no git, no persistent filesystem writes).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Non-negotiables"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-01-05",
+      "term": "Treat warnings as failures by default",
+      "label": "Treat warnings as failures by default.",
+      "definition": "Treat warnings as failures by default.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Non-negotiables"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-01",
+      "term": "For each meaningful happy-path test, add corresponding failure tests",
+      "label": "For each meaningful happy-path test, add corresponding failure tests and explicit edge-case tests.",
+      "definition": "For each meaningful happy-path test, add corresponding failure tests and explicit edge-case tests.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-02",
+      "term": "Exercise edge cases around configuration toggles and dependency",
+      "label": "Exercise edge cases around configuration toggles and dependency interactions.",
+      "definition": "Exercise edge cases around configuration toggles and dependency interactions.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-03",
+      "term": "Failure tests verify exceptions (not fallback return values)",
+      "label": "Failure tests verify exceptions (not fallback return values).",
+      "definition": "Failure tests verify exceptions (not fallback return values).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-04",
+      "term": "Success tests assert returned values and relevant side effects",
+      "label": "Success tests assert returned values and relevant side effects.",
+      "definition": "Success tests assert returned values and relevant side effects.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-05",
+      "term": "Every committed Python module must be covered by tests. If you add a",
+      "label": "Every committed Python module must be covered by tests. If you add a `.py` file, you add tests covering its full behaviour.",
+      "definition": "Every committed Python module must be covered by tests. If you add a `.py` file, you add tests covering its full behaviour.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-06",
+      "term": "Property-like tests for pure functions with meaningful invariants",
+      "label": "Prefer property-like tests for pure functions with meaningful invariants.",
+      "definition": "Prefer property-like tests for pure functions with meaningful invariants.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-07",
+      "term": "Don't test third-party libraries; test our adapters and contracts",
+      "label": "Don't test third-party libraries; test our adapters and contracts around them.",
+      "definition": "Don't test third-party libraries; test our adapters and contracts around them.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-08",
+      "term": "Slow tests in an integration suite. Integration tests exercise real",
+      "label": "Keep slow tests in an integration suite. Integration tests exercise real readers and writers after core tests pass.",
+      "definition": "Keep slow tests in an integration suite. Integration tests exercise real readers and writers after core tests pass.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-09",
+      "term": "E2E smoke tests minimal but representative",
+      "label": "Keep E2E smoke tests minimal but representative.",
+      "definition": "Keep E2E smoke tests minimal but representative.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-10",
+      "term": "Files written (assert content/shape via temp paths)",
+      "label": "Files written (assert content/shape via temp paths).",
+      "definition": "Files written (assert content/shape via temp paths).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-11",
+      "term": "Subprocess calls (assert invocations and interpreted outputs)",
+      "label": "Subprocess calls (assert invocations and interpreted outputs).",
+      "definition": "Subprocess calls (assert invocations and interpreted outputs).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-12",
+      "term": "Logs emitted",
+      "label": "Logs emitted.",
+      "definition": "Logs emitted.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-02-13",
+      "term": "DB writes / boundary calls",
+      "label": "DB writes / boundary calls.",
+      "definition": "DB writes / boundary calls.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §What tests must cover"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-03-01",
+      "term": "`test__{function}__{case}__{success|fail}`",
+      "label": "`test__{function}__{case}__{success|fail}`",
+      "definition": "`test__{function}__{case}__{success|fail}`",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Naming and ordering"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-03-02",
+      "term": "Put failure tests first (within a file / logical group), then success",
+      "label": "Put failure tests first (within a file / logical group), then success tests.",
+      "definition": "Put failure tests first (within a file / logical group), then success tests.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Naming and ordering"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-04-01",
+      "term": "Test behaviour, not implementation details",
+      "label": "Test behaviour, not implementation details.",
+      "definition": "Test behaviour, not implementation details.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Test size and structure"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-04-02",
+      "term": "Each test function **≤5 executable lines**",
+      "label": "Keep each test function **≤5 executable lines**.",
+      "definition": "Keep each test function **≤5 executable lines**.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Test size and structure"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-04-03",
+      "term": "Fixtures for setup",
+      "label": "Use fixtures for setup.",
+      "definition": "Use fixtures for setup.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Test size and structure"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-04-04",
+      "term": "`@pytest.mark.parametrize` for permutations",
+      "label": "Use `@pytest.mark.parametrize` for permutations.",
+      "definition": "Use `@pytest.mark.parametrize` for permutations.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Test size and structure"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-04-05",
+      "term": "Avoid loops and conditionals inside tests",
+      "label": "Avoid loops and conditionals inside tests.",
+      "definition": "Avoid loops and conditionals inside tests.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Test size and structure"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-04-06",
+      "term": "One assert “shape” per test (one behaviour), not many loosely-related",
+      "label": "Prefer one assert “shape” per test (one behaviour), not many loosely-related assertions.",
+      "definition": "Prefer one assert “shape” per test (one behaviour), not many loosely-related assertions.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Test size and structure"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-05-01",
+      "term": "Precise exception types",
+      "label": "Prefer precise exception types.",
+      "definition": "Prefer precise exception types.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Failure behaviour: exceptions and messages"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-05-02",
+      "term": "`pytest.raises(..., match=...)` for failure cases",
+      "label": "Use `pytest.raises(..., match=...)` for failure cases.",
+      "definition": "Use `pytest.raises(..., match=...)` for failure cases.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Failure behaviour: exceptions and messages"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-05-03",
+      "term": "A raw-string regex for `match`, for example `match=r\"invalid value\"`",
+      "label": "Use a raw-string regex for `match`, for example `match=r\"invalid value\"`.",
+      "definition": "Use a raw-string regex for `match`, for example `match=r\"invalid value\"`.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Failure behaviour: exceptions and messages"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-06-01",
+      "term": "If a warning is expected behaviour, assert it explicitly with",
+      "label": "If a warning is expected behaviour, assert it explicitly with `pytest.warns(...)`.",
+      "definition": "If a warning is expected behaviour, assert it explicitly with `pytest.warns(...)`.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Warnings"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-06-02",
+      "term": "If warning text is contractual, assert it; otherwise avoid brittle",
+      "label": "If warning text is contractual, assert it; otherwise avoid brittle text matching.",
+      "definition": "If warning text is contractual, assert it; otherwise avoid brittle text matching.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Warnings"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-07-01",
+      "term": "Fixtures for setup; keep test bodies tiny",
+      "label": "Prefer fixtures for setup; keep test bodies tiny.",
+      "definition": "Prefer fixtures for setup; keep test bodies tiny.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Fixtures"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-07-02",
+      "term": "Fixture scope is `function`",
+      "label": "Default fixture scope is `function`.",
+      "definition": "Default fixture scope is `function`.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Fixtures"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-07-03",
+      "term": "Avoid `autouse=True` unless it removes noise without hiding behaviour",
+      "label": "Avoid `autouse=True` unless it removes noise without hiding behaviour.",
+      "definition": "Avoid `autouse=True` unless it removes noise without hiding behaviour.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Fixtures"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-07-04",
+      "term": "Fixture names must encode intent (what the fixture represents), not",
+      "label": "Fixture names must encode intent (what the fixture represents), not mechanics.",
+      "definition": "Fixture names must encode intent (what the fixture represents), not mechanics.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Fixtures"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-08-01",
+      "term": "`@pytest.mark.parametrize` over loops",
+      "label": "Prefer `@pytest.mark.parametrize` over loops.",
+      "definition": "Prefer `@pytest.mark.parametrize` over loops.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Parametrisation"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-08-02",
+      "term": "`pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are",
+      "label": "Use `pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are self-explanatory.",
+      "definition": "Use `pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are self-explanatory.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Parametrisation"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-08-03",
+      "term": "Parameter sets small and intention-revealing; avoid combinatorial",
+      "label": "Keep parameter sets small and intention-revealing; avoid combinatorial explosions.",
+      "definition": "Keep parameter sets small and intention-revealing; avoid combinatorial explosions.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Parametrisation"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-09-01",
+      "term": "Mock only at external boundaries",
+      "label": "Mock only at external boundaries (network, DB, subprocess, filesystem boundary when unavoidable).",
+      "definition": "Mock only at external boundaries (network, DB, subprocess, filesystem boundary when unavoidable).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Mocking, patching, and dependency injection"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-09-02",
+      "term": "Avoid mocking internals unless no clearer option exists",
+      "label": "Avoid mocking internals unless no clearer option exists.",
+      "definition": "Avoid mocking internals unless no clearer option exists.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Mocking, patching, and dependency injection"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-09-03",
+      "term": "Dependency injection (DI) over mocking for external boundaries and",
+      "label": "Prefer dependency injection (DI) over mocking for external boundaries and dependencies.",
+      "definition": "Prefer dependency injection (DI) over mocking for external boundaries and dependencies.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Mocking, patching, and dependency injection"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-09-04",
+      "term": "Mocking when DI is overkill and it is the clearest option",
+      "label": "Allow mocking when DI is overkill and it is the clearest option.",
+      "definition": "Allow mocking when DI is overkill and it is the clearest option.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Mocking, patching, and dependency injection"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-09-05",
+      "term": "Consider both `pytest-mock` (mocker fixture) and `unittest.mock`",
+      "label": "Consider both `pytest-mock` (mocker fixture) and `unittest.mock`; choose whichever is clearer for the specific case.",
+      "definition": "Consider both `pytest-mock` (mocker fixture) and `unittest.mock`; choose whichever is clearer for the specific case.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Mocking, patching, and dependency injection"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-09-06",
+      "term": "If patching, patch where the dependency is **used**, not where it is",
+      "label": "If patching, patch where the dependency is **used**, not where it is defined.",
+      "definition": "If patching, patch where the dependency is **used**, not where it is defined.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Mocking, patching, and dependency injection"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-10-01",
+      "term": "Network",
+      "label": "Network",
+      "definition": "Network",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Isolation rules (no external side effects)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-10-02",
+      "term": "Git",
+      "label": "Git",
+      "definition": "Git",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Isolation rules (no external side effects)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-10-03",
+      "term": "Real persistent filesystem writes",
+      "label": "Real persistent filesystem writes",
+      "definition": "Real persistent filesystem writes",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Isolation rules (no external side effects)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-10-04",
+      "term": "For filesystem work, use pytest's `tmp_path` fixture. It gives each",
+      "label": "For filesystem work, use pytest's `tmp_path` fixture. It gives each test a unique temporary directory.",
+      "definition": "For filesystem work, use pytest's `tmp_path` fixture. It gives each test a unique temporary directory.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Isolation rules (no external side effects)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-10-05",
+      "term": "Mock subprocess boundaries",
+      "label": "Mock subprocess boundaries.",
+      "definition": "Mock subprocess boundaries.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Isolation rules (no external side effects)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-10-06",
+      "term": "DI or `monkeypatch` for environment/config seams",
+      "label": "Use DI or `monkeypatch` for environment/config seams.",
+      "definition": "Use DI or `monkeypatch` for environment/config seams.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Isolation rules (no external side effects)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-11-01",
+      "term": "Marks are allowed where appropriate",
+      "label": "Marks are allowed where appropriate (e.g., `unit`, `integration`, `slow`), but not required globally.",
+      "definition": "Marks are allowed where appropriate (e.g., `unit`, `integration`, `slow`), but not required globally.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Marks"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-11-02",
+      "term": "Marks only when they clarify expectations or enable meaningful",
+      "label": "Use marks only when they clarify expectations or enable meaningful filtering.",
+      "definition": "Use marks only when they clarify expectations or enable meaningful filtering.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Marks"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-12",
+      "term": "Recommended pytest configuration",
+      "label": "Recommended pytest configuration",
+      "definition": "Projects should configure pytest so warnings fail by default.\n\nExample `pyproject.toml`:\n\n```toml\n[tool.pytest.ini_options]\nfilterwarnings = [\"error\"]\n```\n\nIf a project needs to permit specific warnings, add narrow allow-lists instead of disabling strictness broadly.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Recommended pytest configuration"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-13-01",
+      "term": "Tests describe behaviour clearly and do not overfit implementation",
+      "label": "Tests describe behaviour clearly and do not overfit implementation details.",
+      "definition": "Tests describe behaviour clearly and do not overfit implementation details.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Reviewer checklist (Test Reviewer)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-13-02",
+      "term": "Failure tests exist (and appear before success tests)",
+      "label": "Failure tests exist (and appear before success tests).",
+      "definition": "Failure tests exist (and appear before success tests).",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Reviewer checklist (Test Reviewer)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-13-03",
+      "term": "Each test is ≤5 executable lines; setup is in fixtures/parametrisation",
+      "label": "Each test is ≤5 executable lines; setup is in fixtures/parametrisation.",
+      "definition": "Each test is ≤5 executable lines; setup is in fixtures/parametrisation.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Reviewer checklist (Test Reviewer)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-13-04",
+      "term": "Tests are isolated (no network/git/persistent FS); use DI, temp paths",
+      "label": "Tests are isolated (no network/git/persistent FS); use DI, temp paths and mocks.",
+      "definition": "Tests are isolated (no network/git/persistent FS); use DI, temp paths and mocks.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Reviewer checklist (Test Reviewer)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-13-05",
+      "term": "Success tests assert outcomes and relevant side effects",
+      "label": "Success tests assert outcomes and relevant side effects.",
+      "definition": "Success tests assert outcomes and relevant side effects.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Reviewer checklist (Test Reviewer)"
+      ],
+      "example_ref": null
+    },
+    {
+      "id": "PT-13-06",
+      "term": "Warnings fail by default; expected warnings are asserted explicitly",
+      "label": "Warnings fail by default; expected warnings are asserted explicitly.",
+      "definition": "Warnings fail by default; expected warnings are asserted explicitly.",
+      "sources": [
+        "CODE_STANDARDS.pytest.md §Reviewer checklist (Test Reviewer)"
+      ],
+      "example_ref": null
+    }
+  ],
+  "test_examples": {}
+}

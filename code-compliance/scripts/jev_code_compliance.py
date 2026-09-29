@@ -41,6 +41,7 @@ from _jev_types import ConstructRow, Matrix, PrincipleInfo, ScoreAnswer
 _DATA_FILE = Path(__file__).resolve().parent / "jev_code_compliance_data.json"
 _JEV_PY = Path(__file__).resolve().parents[2] / "tools" / "jev.py"
 _SAFE_REQUEST_BYTES = 60 * 1024
+_CONTEXT_LIMIT_BYTES = 30 * 1024
 _REQUEST_HARD_LIMIT_BYTES = 64 * 1024
 _SCORE_LEVELS = [
     "Not applicable: this standards point has no compliance-relevant rules for this construct",
@@ -210,6 +211,45 @@ def iter_constructs(path: Path, module_kind: ModuleKind) -> Iterator[Construct]:
             yield Construct(node.name, kind, _classify(node, module_kind))
 
 
+def _node_source(lines: Sequence[str], node: ast.AST) -> str:
+    """Keep decorators with the declaration they decorate."""
+    assert isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
+    first = min((item.lineno for item in node.decorator_list), default=node.lineno)
+    return "".join(lines[first - 1 : node.end_lineno])
+
+
+def _module_context(module_text: str, construct: Construct) -> str:
+    """Use the full module when it fits; otherwise retain the target and direct definitions."""
+    if len(module_text.encode("utf-8")) <= _CONTEXT_LIMIT_BYTES:
+        return module_text
+    tree = ast.parse(module_text)
+    lines = module_text.splitlines(keepends=True)
+    declarations = {
+        node.name: node
+        for node in tree.body
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
+    }
+    target = declarations[construct.name]
+    imports = "".join(
+        "".join(lines[node.lineno - 1 : node.end_lineno])
+        for node in tree.body
+        if isinstance(node, (ast.Import, ast.ImportFrom))
+    )
+    names = {node.id for node in ast.walk(target) if isinstance(node, ast.Name)}
+    dependencies = "\n".join(
+        _node_source(lines, node)
+        for name, node in declarations.items()
+        if name in names and name != construct.name
+    )
+    target_text = _node_source(lines, target)
+    context = f"# Selected module excerpt\n{imports}\n{dependencies}\n{target_text}"
+    if len(context.encode("utf-8")) > _CONTEXT_LIMIT_BYTES:
+        context = f"# Selected module excerpt; direct definitions omitted\n{imports}\n{target_text}"
+    if len(context.encode("utf-8")) > _CONTEXT_LIMIT_BYTES:
+        raise ValueError(f"Construct {construct.name} exceeds the context limit")
+    return context
+
+
 def criteria_groups_for(construct: Construct) -> PrincipleGroups:
     """Which principle table(s) apply to this construct, per the role rules above."""
     if construct.role == "src":
@@ -358,6 +398,10 @@ def _size_safe_batches(
     """
     batch = Batch(())
     for criterion in criteria:
+        if not _fits(Batch(()), criterion, module_text, construct):
+            raise ValueError(
+                f"A single principle exceeds the request limit: {criterion.id}"
+            )
         if batch.criteria and not _fits(batch, criterion, module_text, construct):
             yield batch
             batch = Batch((criterion,))
@@ -375,11 +419,12 @@ def _answers_for_construct(construct: Construct, module_text: str) -> BatchResul
     collision to resolve, whichever principle groups a batch mixed together.
     """
     all_criteria = criteria_groups_for(construct).criteria
+    context = _module_context(module_text, construct)
     merged: dict[str, ScoreAnswer] = {}
     calls = 0
-    for batch in _size_safe_batches(all_criteria, module_text, construct):
+    for batch in _size_safe_batches(all_criteria, context, construct):
         merged.update(
-            _call_jev(_build_request(construct, batch.criteria, module_text))["answers"]
+            _call_jev(_build_request(construct, batch.criteria, context))["answers"]
         )
         calls += 1
     return BatchResult(answers=merged, call_count=calls)

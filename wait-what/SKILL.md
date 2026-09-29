@@ -1,6 +1,6 @@
 ﻿---
 name: wait-what
-description: Re-explain the assistant's last message with missing context and simpler language when the user says they did not understand it.
+description: Re-explain the assistant's last message with missing context and simpler language when the user says they did not understand it. Invoke when the user says "what?" or "wait what?" or "no idea what you are talking about"
 ---
 
-When the user says the last explanation did not land, re-explain it with the missing context. Use ASD-STE100 Simplified Technical English and the terms in `CONTEXT.md` when that file exists. If the repository has `CONTEXT-MAP.md`, use it to find the relevant context file.
+When the user says the last explanation did not land, re-explain it with the missing context. Use ASD-STE100 Simplified Technical English and the terms in `glossary.json` when that file exists.

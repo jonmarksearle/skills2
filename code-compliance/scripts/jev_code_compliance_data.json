@@ -268,7 +268,7 @@
       "id": "CS-05-01",
       "term": "A pragmatic blend of FP and OOP: favour pure functions, immutability",
       "label": "Prefer a pragmatic blend of FP and OOP: favour pure functions, immutability, and side-effect-free core logic, while using objects to model cohesive state and operational boundaries.",
-      "definition": "Prefer a pragmatic blend of FP and OOP: favour pure functions, immutability, and side-effect-free core logic, while using objects to model cohesive state and operational boundaries.",
+      "definition": "Prefer a pragmatic blend of FP and OOP: favour pure functions, immutability, and side-effect-free core logic, while using objects to model cohesive state and operational boundaries. Bad: `r = []` (or `{}`/`set()`) followed by a loop that calls `.append()`/`.extend()`/`.update()`/`[key] = value` on it to build the return value. Flag any construct containing that pattern; a construct with no such empty-container-then-loop-mutation pattern is compliant, regardless of any other style choices it makes.",
       "sources": [
         "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
         "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
@@ -433,7 +433,7 @@
       "id": "CS-07-07",
       "term": "Break up nested loops or conditionals into helper functions",
       "label": "Break up nested loops or conditionals into helper functions.",
-      "definition": "Break up nested loops or conditionals into helper functions.",
+      "definition": "Break up nested loops or conditionals into helper functions. Bad: `(f(a, b) for a in xs for b in ys(a))` or nested `for`/`if`. Flag 2+ nested iteration/conditional levels not split into a helper; 1 level is compliant.",
       "sources": [
         "CODE_STANDARDS.md §7) Functions, readability, and ordering",
         "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
@@ -724,7 +724,7 @@
       "id": "CS-08-18",
       "term": "Avoid mutating existing containers, such as with `+` or",
       "label": "Avoid mutating existing containers, such as with `+` or `.append()`/`.extend()` or `dict.update()` or `set.add()` or `list.insert()`.",
-      "definition": "Avoid mutating existing containers, such as with `+` or `.append()`/`.extend()` or `dict.update()` or `set.add()` or `list.insert()`.",
+      "definition": "Avoid mutating existing containers, such as with `+` or `.append()`/`.extend()` or `dict.update()` or `set.add()` or `list.insert()`. Bad: `d.setdefault(k, []).append(x)`. Flag `.append/.extend/.update/.add/.insert()` or `d[k] = v` mutating after creation; none present is compliant.",
       "sources": [
         "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
       ],
@@ -937,7 +937,7 @@
       "id": "CS-12-02",
       "term": "Avoid overly generic types like `Any` or `object` unless unavoidable",
       "label": "Avoid overly generic types like `Any` or `object` unless unavoidable and the boundary is explicit.",
-      "definition": "Avoid overly generic types like `Any` or `object` unless unavoidable and the boundary is explicit.",
+      "definition": "Avoid overly generic types like `Any` or `object` unless unavoidable and the boundary is explicit. Bad: `def f(x: object) -> None: ...`. Flag a literal `Any`/`object` in any annotation; absent is compliant.",
       "sources": [
         "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
         "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"

@@ -44,10 +44,13 @@ Two separate tables, because src and test Python are judged differently:
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable, Iterator, Mapping
 from dataclasses import asdict, dataclass
+from itertools import chain
 from pathlib import Path
 
 import typer
+
 from _jev_markdown import derive_term, leading_number, list_items, slug, split_sections
 
 _SKILL_DIR = Path(__file__).resolve().parent.parent
@@ -82,24 +85,26 @@ def _decompose_section(
     document: str,
     example_document: str,
     example_ref: str | None,
-) -> list[Criterion]:
+) -> Iterator[Criterion]:
     """One principle per bullet under `title`; the whole section if it has none."""
     sources: tuple[str, ...] = (f"{document} §{title}",)
     if example_ref is not None:
         sources += (f"{example_document} §{title}",)
     bullets = tuple(list_items(body))
     if not bullets:
-        return [
-            Criterion(
-                f"{id_prefix}-{section_number:02d}",
-                derive_term(title),
-                title,
-                body,
-                sources,
-                example_ref,
+        return iter(
+            (
+                Criterion(
+                    f"{id_prefix}-{section_number:02d}",
+                    derive_term(title),
+                    title,
+                    body,
+                    sources,
+                    example_ref,
+                ),
             )
-        ]
-    return [
+        )
+    return (
         Criterion(
             f"{id_prefix}-{section_number:02d}-{index:02d}",
             derive_term(bullet),
@@ -109,7 +114,72 @@ def _decompose_section(
             example_ref,
         )
         for index, bullet in enumerate(bullets, start=1)
-    ]
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class SectionPlan:
+    """One `## Title` section's position and worked-example pair, resolved once
+    so `criteria` and `example_texts` both build from the same values below
+    without recomputing them."""
+
+    title: str
+    body: str
+    number: int
+    example: tuple[str, str] | None
+    """`(example_ref, example_body)` when `examples` has a same-titled section,
+    `None` otherwise."""
+
+
+def _resolve_section(
+    id_prefix: str,
+    standard_name: str,
+    example_sections: Mapping[str, str],
+    order: int,
+    title: str,
+    body: str,
+) -> SectionPlan:
+    number = leading_number(title)
+    number = order if number is None else number
+    example_body = example_sections.get(title)
+    example = (
+        (f"{slug(standard_name)}_{id_prefix}_{number:02d}", example_body)
+        if example_body is not None
+        else None
+    )
+    return SectionPlan(title, body, number, example)
+
+
+def _section_plans(
+    id_prefix: str,
+    standard_name: str,
+    sections: Mapping[str, str],
+    example_sections: Mapping[str, str],
+) -> Iterator[SectionPlan]:
+    return (
+        _resolve_section(id_prefix, standard_name, example_sections, order, title, body)
+        for order, (title, body) in enumerate(sections.items(), start=1)
+    )
+
+
+def _criteria_for_plans(
+    id_prefix: str,
+    standard_name: str,
+    example_document: str,
+    plans: Iterable[SectionPlan],
+) -> Iterator[Criterion]:
+    return chain.from_iterable(
+        _decompose_section(
+            id_prefix,
+            plan.number,
+            plan.title,
+            plan.body,
+            standard_name,
+            example_document,
+            plan.example[0] if plan.example is not None else None,
+        )
+        for plan in plans
+    )
 
 
 def _build_table(
@@ -121,27 +191,12 @@ def _build_table(
         if examples is not None
         else {}
     )
-    criteria: list[Criterion] = []
-    example_texts: dict[str, str] = {}
-    for order, (title, body) in enumerate(sections.items(), start=1):
-        number = leading_number(title)
-        number = order if number is None else number
-        example_body = example_sections.get(title)
-        example_ref = None
-        if example_body is not None:
-            example_ref = f"{slug(standard.name)}_{id_prefix}_{number:02d}"
-            example_texts[example_ref] = example_body
-        criteria.extend(
-            _decompose_section(
-                id_prefix,
-                number,
-                title,
-                body,
-                standard.name,
-                examples.name if examples is not None else "",
-                example_ref,
-            )
-        )
+    example_document = examples.name if examples is not None else ""
+    plans = tuple(_section_plans(id_prefix, standard.name, sections, example_sections))
+    criteria = list(
+        _criteria_for_plans(id_prefix, standard.name, example_document, plans)
+    )
+    example_texts = dict(plan.example for plan in plans if plan.example is not None)
     return CriteriaTable(criteria, example_texts)
 
 

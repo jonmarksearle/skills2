@@ -27,11 +27,13 @@ from __future__ import annotations
 import json
 from collections.abc import Iterator, Mapping, Sequence
 from dataclasses import dataclass
+from itertools import chain
 from pathlib import Path
 from typing import cast
 
 import typer
-from _jev_types import Matrix, PrincipleInfo
+
+from _jev_types import ConstructRow, LintReport, Matrix, PrincipleInfo
 
 _NOT_APPLICABLE_THRESHOLD = 0.5
 _LOW_SCORE_THRESHOLD = 2.5
@@ -47,7 +49,8 @@ class Cell:
     not_applicable_probability: float
 
 
-def _iter_cells(matrix: Matrix) -> Iterator[Cell]:
+def _row_cells(construct: str, row: ConstructRow) -> Iterator[Cell]:
+    """Every scored cell for one construct's row."""
     return (
         Cell(
             construct=construct,
@@ -56,8 +59,13 @@ def _iter_cells(matrix: Matrix) -> Iterator[Cell]:
             confidence=answer["confidence"],
             not_applicable_probability=answer["probabilities"]["0"],
         )
-        for construct, row in matrix["rows"].items()
         for criterion_id, answer in row["answers"].items()
+    )
+
+
+def _iter_cells(matrix: Matrix) -> Iterator[Cell]:
+    return chain.from_iterable(
+        _row_cells(construct, row) for construct, row in matrix["rows"].items()
     )
 
 
@@ -138,12 +146,24 @@ class RoleGroup:
     constructs: tuple[str, ...]
 
 
+def _group_names(matrix: Matrix) -> Iterator[tuple[str, ...]]:
+    """Every distinct `criteria_groups` combination used in `matrix`, deduplicated."""
+    return iter({tuple(row["criteria_groups"]) for row in matrix["rows"].values()})
+
+
+def _constructs_for_group(names: tuple[str, ...], matrix: Matrix) -> tuple[str, ...]:
+    """Every construct whose `criteria_groups` matches `names`."""
+    return tuple(
+        construct
+        for construct, row in matrix["rows"].items()
+        if tuple(row["criteria_groups"]) == names
+    )
+
+
 def _role_groups(matrix: Matrix) -> Iterator[RoleGroup]:
-    grouped: dict[tuple[str, ...], list[str]] = {}
-    for construct, row in matrix["rows"].items():
-        grouped.setdefault(tuple(row["criteria_groups"]), []).append(construct)
     return (
-        RoleGroup(names, tuple(constructs)) for names, constructs in grouped.items()
+        RoleGroup(names, _constructs_for_group(names, matrix))
+        for names in _group_names(matrix)
     )
 
 
@@ -225,6 +245,21 @@ def _report_header(matrix: Matrix, cells: Sequence[Cell]) -> Iterator[str]:
     yield ""
 
 
+def _lint_section(lint: LintReport) -> Iterator[str]:
+    yield "## Lint (ruff)"
+    yield ""
+    yield "`ruff check` and `ruff format --check --diff` against the scored file --"
+    yield "mechanical PEP 8, line-length, and import-order findings, checked directly"
+    yield "rather than left to Jev's judgment."
+    yield ""
+    if lint["clean"]:
+        yield "Clean: no `ruff check` findings, already `ruff format`-clean.\n"
+        return
+    yield "```"
+    yield (lint["check_output"] + lint["format_diff"]).rstrip("\n")
+    yield "```\n"
+
+
 def _principles_section(matrix: Matrix) -> Iterator[str]:
     yield "## Principles"
     yield ""
@@ -262,12 +297,13 @@ def _full_matrix_section(matrix: Matrix, cells: Sequence[Cell]) -> Iterator[str]
 def render_report(matrix: Matrix) -> str:
     """Build the Markdown report text for one compliance matrix."""
     cells = tuple(_iter_cells(matrix))
-    lines = [
-        *_report_header(matrix, cells),
-        *_principles_section(matrix),
-        *_needs_inspection_section(cells),
-        *_full_matrix_section(matrix, cells),
-    ]
+    lines = chain(
+        _report_header(matrix, cells),
+        _lint_section(matrix["lint"]),
+        _principles_section(matrix),
+        _needs_inspection_section(cells),
+        _full_matrix_section(matrix, cells),
+    )
     return "\n".join(lines).rstrip("\n") + "\n"
 
 

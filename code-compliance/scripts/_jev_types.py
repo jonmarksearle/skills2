@@ -29,8 +29,20 @@ class PrincipleInfo(TypedDict):
     sources: list[str]
 
 
+class LintReport(TypedDict):
+    """`ruff check` and `ruff format --check --diff` output for the scored file.
+
+    Mechanical PEP 8 / line-length / import-order issues that ruff catches
+    outright, so Jev's fuzzy judgment isn't asked to guess at them too."""
+
+    check_output: str
+    format_diff: str
+    clean: bool
+
+
 class Matrix(TypedDict):
     module_file: str
+    lint: LintReport
     principles: dict[str, PrincipleInfo]
     jev_call_count: int
     rows: dict[str, ConstructRow]

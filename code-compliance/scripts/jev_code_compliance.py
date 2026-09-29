@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import subprocess
 import tempfile
 from collections.abc import Iterable, Iterator, Sequence
@@ -36,13 +37,15 @@ from pathlib import Path
 from typing import Literal, TypedDict, cast
 
 import typer
-from _jev_types import ConstructRow, Matrix, PrincipleInfo, ScoreAnswer
+from _jev_types import ConstructRow, LintReport, Matrix, PrincipleInfo, ScoreAnswer
 
 _DATA_FILE = Path(__file__).resolve().parent / "jev_code_compliance_data.json"
 _JEV_PY = Path(__file__).resolve().parents[2] / "tools" / "jev.py"
 _SAFE_REQUEST_BYTES = 60 * 1024
 _CONTEXT_LIMIT_BYTES = 30 * 1024
 _REQUEST_HARD_LIMIT_BYTES = 64 * 1024
+_RUFF_CACHE_DIR = Path(tempfile.gettempdir()) / "code-compliance-ruff-cache"
+_RUFF_TOOL_ERROR = 2
 _SCORE_LEVELS = [
     "Not applicable: this standards point has no compliance-relevant rules for this construct",
     "Non-compliant: the construct clearly violates this standards point",
@@ -112,7 +115,7 @@ class ScoreQuestion(TypedDict):
 
 
 class JevRequest(TypedDict):
-    state: dict[str, object]
+    state: dict[str, str]
     questions: dict[str, ScoreQuestion]
 
 
@@ -145,7 +148,10 @@ class TaskFields(TypedDict):
     """The fixed part of a Jev request's `state`. Not the whole of it: `state`
     also carries a variable number of `example_<ref>` keys, one per worked
     example the scored criteria cite, which no fixed TypedDict shape can
-    express -- that part is why `_build_state` still returns a plain dict."""
+    express -- that part is why `_build_state` still returns a plain
+    `dict[str, str]` rather than a closed TypedDict. Every value `state` ever
+    carries is a string regardless: a construct name, the task instructions,
+    and either the module's source text or one worked example's text."""
 
     task: str
     construct_name: str
@@ -291,10 +297,11 @@ def _used_example_refs(criteria: Sequence[Criterion]) -> Iterator[str]:
 
 def _build_state(
     construct: Construct, criteria: Sequence[Criterion], module_text: str
-) -> dict[str, object]:
-    """A plain dict, not a `TypedDict`: on top of `TaskFields`' fixed keys, this
-    carries a variable number of `example_<ref>` keys, one per worked example
-    `criteria` cites, which no fixed shape can express."""
+) -> dict[str, str]:
+    """A plain `dict[str, str]`, not a `TypedDict`: on top of `TaskFields`'
+    fixed keys, this carries a variable number of `example_<ref>` keys, one
+    per worked example `criteria` cites, which no fixed shape can express --
+    every value is still a string, so the container stays precisely typed."""
     fields = TaskFields(
         task=(
             f"Score how well the {construct.kind} named `construct_name`, defined in "
@@ -306,7 +313,7 @@ def _build_state(
     examples = {
         f"example_{ref}": _BAKED.examples[ref] for ref in _used_example_refs(criteria)
     }
-    return {**fields, **examples}
+    return {**cast(dict[str, str], fields), **examples}
 
 
 def _build_questions(criteria: Sequence[Criterion]) -> dict[str, ScoreQuestion]:
@@ -430,6 +437,37 @@ def _answers_for_construct(construct: Construct, module_text: str) -> BatchResul
     return BatchResult(answers=merged, call_count=calls)
 
 
+def _ruff_run(*args: str, module_file: Path) -> subprocess.CompletedProcess[str]:
+    """A dedicated `UV_CACHE_DIR` keeps this off the default cache, which the
+    concurrent `uv run --script jev.py` calls above can lock and fail on."""
+    env = {**os.environ, "UV_CACHE_DIR": str(_RUFF_CACHE_DIR)}
+    return subprocess.run(
+        ["uvx", "ruff", *args, str(module_file)],
+        capture_output=True,
+        text=True,
+        check=False,
+        env=env,
+    )
+
+
+def run_ruff(module_file: Path) -> LintReport:
+    """Mechanical PEP 8, line-length, and import-order findings, from `ruff`
+    itself -- not asked of Jev, since ruff already answers these precisely,
+    deterministically, and for free. `uvx` fetches ruff on demand, so this
+    works against any project without requiring ruff in its own environment."""
+    check = _ruff_run("check", module_file=module_file)
+    fmt = _ruff_run("format", "--check", "--diff", module_file=module_file)
+    if _RUFF_TOOL_ERROR in (check.returncode, fmt.returncode):
+        raise RuntimeError(
+            f"ruff failed to run against {module_file}:\n{check.stderr}{fmt.stderr}"
+        )
+    return LintReport(
+        check_output=check.stdout + check.stderr,
+        format_diff=fmt.stdout + fmt.stderr,
+        clean=check.returncode == 0 and fmt.returncode == 0,
+    )
+
+
 def build_matrix(module_file: Path) -> Matrix:
     """Score every top-level construct in `module_file` against its applicable principles."""
     module_kind = detect_module_kind(module_file)
@@ -460,6 +498,7 @@ def build_matrix(module_file: Path) -> Matrix:
     }
     return Matrix(
         module_file=str(module_file),
+        lint=run_ruff(module_file),
         principles=principles,
         jev_call_count=total_calls,
         rows=rows,
@@ -477,9 +516,10 @@ def main(
     matrix = build_matrix(module_file)
     out.write_text(json.dumps(matrix, indent=2, ensure_ascii=False), encoding="utf-8")
     criteria_count = sum(len(row["answers"]) for row in matrix["rows"].values())
+    lint_status = "clean" if matrix["lint"]["clean"] else "has findings"
     print(
         f"Wrote {len(matrix['rows'])} constructs, {criteria_count} scored points, "
-        f"{matrix['jev_call_count']} Jev calls, to {out}"
+        f"{matrix['jev_call_count']} Jev calls, ruff {lint_status}, to {out}"
     )
 
 

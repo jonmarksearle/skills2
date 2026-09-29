@@ -66,8 +66,11 @@ row as a lead, never a verdict, until checked against the real source.
    stays green; rerun the module's format/lint/type/pytest gate after each fix). A dismissed row is a
    model miss, not a defect: leave the code unchanged. If one principle keeps producing dismissed
    flags across several constructs, that is a signal to reconsider its definition (see
-   [references/setup.md](references/setup.md)), not a code problem to chase. **Done when:** every
-   flagged row has a recorded disposition and every confirmed gap is fixed.
+   [references/setup.md](references/setup.md)) or to check whether the principle is one Jev can't
+   reliably score at all for that construct shape (see
+   [references/jev_reliability_audit.md](references/jev_reliability_audit.md)), not a code problem to
+   chase. **Done when:** every flagged row has a recorded disposition and every confirmed gap is
+   fixed.
 3. Preserve each report as review evidence; a later run for the same file gets a new `{n}`, not an
    overwrite. Close the module's Outer Refactoring gate once every confirmed gap from both its src
    and test reports is fixed and the module's quality gate is green. **Done when:** the module's row
@@ -100,3 +103,6 @@ The principle tables are already baked in; regenerating them (only needed after 
 a separate, occasional task, not part of ordinary use — see
 [references/setup.md](references/setup.md). [evaluations/](evaluations/README.md) has scenario-based
 checks of role classification, report structure, and the generator's behaviour on a Standards edit.
+[references/jev_reliability_audit.md](references/jev_reliability_audit.md) has the procedure for
+confirming a principle Jev can't reliably score for a given construct shape, and the running list of
+confirmed blind spots.

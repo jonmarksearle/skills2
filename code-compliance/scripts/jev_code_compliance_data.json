@@ -70,7 +70,7 @@
       "id": "CS-00-07",
       "term": "Minimise Comments",
       "label": "Minimise Comments.",
-      "definition": "Minimise Comments.",
+      "definition": "Minimise Comments. Flag a comment that restates the code or a stale comment. Code with no comments, and docstrings that state a contract, are compliant.",
       "sources": [
         "CODE_STANDARDS.md §0) Principles",
         "CODE_STANDARDS.examples.md §0) Principles"
@@ -213,7 +213,7 @@
       "id": "CS-02-01",
       "term": "Target: Python 3.12+",
       "label": "Default target: Python 3.12+ (prefer 3.14 features when they improve clarity and are supported).",
-      "definition": "Default target: Python 3.12+ (prefer 3.14 features when they improve clarity and are supported).",
+      "definition": "Default target: Python 3.12+ (prefer 3.14 features when they improve clarity and are supported). Flag only syntax or library use older than Python 3.12 that a construct visibly contains (for example `typing.List`, `Optional[X]`, `TypeVar` instead of `def f[T]`). Modern constructs are compliant. A construct that uses no version-specific feature is compliant, not a gap.",
       "sources": [
         "CODE_STANDARDS.md §2) Defaults (and overrides)",
         "CODE_STANDARDS.examples.md §2) Defaults (and overrides)"
@@ -235,7 +235,7 @@
       "id": "CS-02-03",
       "term": "Follow PEP 8; let `ruff` be the enforcer",
       "label": "Follow PEP 8; let `ruff` be the enforcer.",
-      "definition": "Follow PEP 8; let `ruff` be the enforcer.",
+      "definition": "Follow PEP 8; let `ruff` be the enforcer. Line length, quoting and import order are checked directly by `ruff` and reported in the Lint section. Score only visible PEP 8 naming violations (snake_case functions and variables, CapWords classes, UPPER_CASE constants). Clean formatting is compliant.",
       "sources": [
         "CODE_STANDARDS.md §2) Defaults (and overrides)",
         "CODE_STANDARDS.examples.md §2) Defaults (and overrides)"
@@ -334,7 +334,7 @@
       "id": "CS-05-07",
       "term": "Functions where classes are not really nessasary; use classes when",
       "label": "Prefer functions where classes are not really nessasary; use classes when they reduce complexity (invariants, meaningful state, clearer orchestration, less argument threading, polymorphism).",
-      "definition": "Prefer functions where classes are not really nessasary; use classes when they reduce complexity (invariants, meaningful state, clearer orchestration, less argument threading, polymorphism).",
+      "definition": "Prefer functions where classes are not really nessasary; use classes when they reduce complexity (invariants, meaningful state, clearer orchestration, less argument threading, polymorphism). Flag a class that holds no invariant or meaningful state and only wraps one function, or a function that threads many arguments a class would remove. A frozen dataclass that carries data across a boundary is compliant, and so is a plain function.",
       "sources": [
         "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
         "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
@@ -466,7 +466,7 @@
       "id": "CS-07-10",
       "term": "Each function does either business logic or exception handling, never",
       "label": "Each function does either business logic or exception handling, never both.",
-      "definition": "Each function does either business logic or exception handling, never both.",
+      "definition": "Each function does either business logic or exception handling, never both. Flag a function that contains `try`/`except` and also does other business logic. Standards section 15 puts every `try`/`except` in a dedicated safeguarding function. A function that only raises a guard error, or a function with no `try`/`except`, is compliant.",
       "sources": [
         "CODE_STANDARDS.md §7) Functions, readability, and ordering",
         "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
@@ -543,7 +543,7 @@
       "id": "CS-07-17",
       "term": "Accept multi-line docstrings only when the logic is non-obvious",
       "label": "Accept multi-line docstrings only when the logic is non-obvious.",
-      "definition": "Accept multi-line docstrings only when the logic is non-obvious.",
+      "definition": "Accept multi-line docstrings only when the logic is non-obvious. Flag a multi-line docstring on logic that is obvious from its name and types. Single-line docstrings, and no docstring on a private helper, are compliant.",
       "sources": [
         "CODE_STANDARDS.md §7) Functions, readability, and ordering",
         "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
@@ -684,7 +684,7 @@
       "id": "CS-08-14",
       "term": "Construct using comprehension, or materialise at the edge from an",
       "label": "Construct using comprehension, or materialise at the edge from an iterator or generator function. Only at edge, and only when unavoidable.",
-      "definition": "Construct using comprehension, or materialise at the edge from an iterator or generator function. Only at edge, and only when unavoidable.",
+      "definition": "Construct using comprehension, or materialise at the edge from an iterator or generator function. Only at edge, and only when unavoidable. Flag a container built with a loop and append, or materialised inside a private helper when an iterator would serve every caller. A `tuple(...)` or `frozenset(...)` call at the public edge, for a frozen dataclass field, or where the result is read more than once is compliant.",
       "sources": [
         "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
       ],
@@ -714,7 +714,7 @@
       "id": "CS-08-17",
       "term": "Materialised containers only when the contract requires mutability or",
       "label": "Allow materialised containers only when the contract requires mutability or multi-pass consumption.",
-      "definition": "Allow materialised containers only when the contract requires mutability or multi-pass consumption.",
+      "definition": "Allow materialised containers only when the contract requires mutability or multi-pass consumption. Flag a materialised container only when nothing needs mutability or a second pass. A `tuple(...)` that feeds a frozen dataclass field, a replay, or two reads is compliant. A construct that builds no container is not applicable.",
       "sources": [
         "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
       ],
@@ -854,7 +854,7 @@
       "id": "CS-10-01",
       "term": "Top-level imports (normal Python style)",
       "label": "Prefer top-level imports (normal Python style).",
-      "definition": "Prefer top-level imports (normal Python style).",
+      "definition": "Prefer top-level imports (normal Python style). Flag only an `import` placed inside a function or conditional block. A construct with no import statement is not applicable.",
       "sources": [
         "CODE_STANDARDS.md §10) Imports",
         "CODE_STANDARDS.examples.md §10) Imports"
@@ -876,7 +876,7 @@
       "id": "CS-11-01",
       "term": "Modern stdlib tools",
       "label": "Prefer modern stdlib tools (`pathlib`, `itertools`, `functools`, `collections.abc`, `enum`).",
-      "definition": "Prefer modern stdlib tools (`pathlib`, `itertools`, `functools`, `collections.abc`, `enum`).",
+      "definition": "Prefer modern stdlib tools (`pathlib`, `itertools`, `functools`, `collections.abc`, `enum`). Flag code that hand-rolls what a listed stdlib tool already does (string path joins instead of `pathlib`, manual loops instead of `itertools`, hand-written enum constants). Using these tools, or having no matching task, is compliant.",
       "sources": [
         "CODE_STANDARDS.md §11) Preferred libraries"
       ],
@@ -1157,7 +1157,7 @@
       "id": "CS-12-22",
       "term": "`list[T]` or `set[T]` or `dict[K, V]` only when the contract requires",
       "label": "Allow `list[T]` or `set[T]` or `dict[K, V]` only when the contract requires mutable types.",
-      "definition": "Allow `list[T]` or `set[T]` or `dict[K, V]` only when the contract requires mutable types.",
+      "definition": "Allow `list[T]` or `set[T]` or `dict[K, V]` only when the contract requires mutable types. Flag `list[...]`, `set[...]` or `dict[...]` in an annotation, or a list/set/dict built and never mutated. `tuple`, `frozenset`, `Iterator` and `Iterable` are compliant. A construct with no container is not applicable.",
       "sources": [
         "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
         "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"

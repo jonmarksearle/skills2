@@ -191,7 +191,7 @@
       "id": "CS-01-02",
       "term": "Meaningful names over explanatory comments",
       "label": "Prefer meaningful names over explanatory comments.",
-      "definition": "Prefer meaningful names over explanatory comments.",
+      "definition": "Prefer meaningful names over explanatory comments. Flag a comment that explains what a name should have said. A construct with no comments is compliant.",
       "sources": [
         "CODE_STANDARDS.md §1) Language and naming",
         "CODE_STANDARDS.examples.md §1) Language and naming"
@@ -444,7 +444,7 @@
       "id": "CS-07-08",
       "term": "Meaningful function and variable names over comments",
       "label": "Use meaningful function and variable names over comments.",
-      "definition": "Use meaningful function and variable names over comments.",
+      "definition": "Use meaningful function and variable names over comments. Flag a comment or docstring that explains what a poorly named function or variable does. Code with no comments is compliant.",
       "sources": [
         "CODE_STANDARDS.md §7) Functions, readability, and ordering",
         "CODE_STANDARDS.examples.md §7) Functions, readability, and ordering"
@@ -624,7 +624,7 @@
       "id": "CS-08-08",
       "term": "Functions that return `Iterator[T]` rather than concrete containers /",
       "label": "Prefer functions that return `Iterator[T]` rather than concrete containers / materialised collections.",
-      "definition": "Prefer functions that return `Iterator[T]` rather than concrete containers / materialised collections.",
+      "definition": "Prefer functions that return `Iterator[T]` rather than concrete containers / materialised collections. Flag a function that returns a `list`, `set`, `dict`, `tuple`, or `frozenset` when an `Iterator` would serve every caller. A function that returns a dataclass or NamedTuple value, or a sort key, is not returning a container.",
       "sources": [
         "CODE_STANDARDS.md §8) Iteration, construction, and “no append” (very strong preference)"
       ],
@@ -959,7 +959,7 @@
       "id": "CS-12-04",
       "term": "Avoid `# type: ignore`",
       "label": "Avoid `# type: ignore`.",
-      "definition": "Avoid `# type: ignore`.",
+      "definition": "Avoid `# type: ignore`. Flag only a `# type: ignore` comment that appears in the construct. A construct without one is compliant.",
       "sources": [
         "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
         "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
@@ -1102,7 +1102,7 @@
       "id": "CS-12-17",
       "term": "`list[T]` or `set[T]` only when the contract explicitly requires",
       "label": "Allow `list[T]` or `set[T]` only when the contract explicitly requires mutability.",
-      "definition": "Allow `list[T]` or `set[T]` only when the contract explicitly requires mutability.",
+      "definition": "Allow `list[T]` or `set[T]` only when the contract explicitly requires mutability. Flag `list[...]` or `set[...]` in an annotation, or one built and never mutated. `tuple`, `frozenset`, `Iterator` and `Iterable` are compliant, and so is a `frozenset` used for membership or set algebra. A construct with no container is not applicable.",
       "sources": [
         "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
         "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"
@@ -1440,7 +1440,7 @@
       "id": "PT-01-01",
       "term": "Tests are the authoritative spec for behaviour",
       "label": "Tests are the authoritative spec for behaviour.",
-      "definition": "Tests are the authoritative spec for behaviour.",
+      "definition": "Tests are the authoritative spec for behaviour. Flag a test that does not state its expected behaviour, or that asserts only that code ran. A test that asserts a specific outcome is compliant.",
       "sources": [
         "CODE_STANDARDS.pytest.md §Non-negotiables"
       ],
@@ -1550,7 +1550,7 @@
       "id": "PT-02-07",
       "term": "Don't test third-party libraries; test our adapters and contracts",
       "label": "Don't test third-party libraries; test our adapters and contracts around them.",
-      "definition": "Don't test third-party libraries; test our adapters and contracts around them.",
+      "definition": "Don't test third-party libraries; test our adapters and contracts around them. Flag a test that checks a third-party library's own behaviour. A test of this project's own code is compliant.",
       "sources": [
         "CODE_STANDARDS.pytest.md §What tests must cover"
       ],
@@ -1800,7 +1800,7 @@
       "id": "PT-08-02",
       "term": "`pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are",
       "label": "Use `pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are self-explanatory.",
-      "definition": "Use `pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are self-explanatory.",
+      "definition": "Use `pytest.param(..., id=\"...\")` (or `ids=[...]`) so failures are self-explanatory. Flag a parametrised case whose id is empty, a bare number, or unrelated to the case. A parameter string or `pytest.param(..., id=...)` that describes the case is compliant.",
       "sources": [
         "CODE_STANDARDS.pytest.md §Parametrisation"
       ],

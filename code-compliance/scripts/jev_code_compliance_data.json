@@ -896,7 +896,7 @@
       "id": "CS-11-03",
       "term": "`rich` [https://rich.readthedocs.io/] for rich output in CLIs",
       "label": "Prefer `rich` [https://rich.readthedocs.io/] for rich output in CLIs.",
-      "definition": "Prefer `rich` [https://rich.readthedocs.io/] for rich output in CLIs.",
+      "definition": "Prefer `rich` [https://rich.readthedocs.io/] for rich output in CLIs. Flag only a construct that formats tables, colour, progress bars, or panels by hand. Plain-text messages printed with `typer.echo` or `print` are not applicable.",
       "sources": [
         "CODE_STANDARDS.md §11) Preferred libraries"
       ],

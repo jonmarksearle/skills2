@@ -1003,7 +1003,7 @@
       "id": "CS-12-08",
       "term": "`typing.override` when overriding base class methods",
       "label": "`typing.override` when overriding base class methods",
-      "definition": "`typing.override` when overriding base class methods",
+      "definition": "`typing.override` when overriding base class methods. Flag only a method that overrides a method of an explicit base class and lacks `@override`. A module-level function, a dataclass, a class with no base class, and a class that implements a Protocol structurally are not applicable.",
       "sources": [
         "CODE_STANDARDS.md §12) Typing (modern, readable, precise)",
         "CODE_STANDARDS.examples.md §12) Typing (modern, readable, precise)"

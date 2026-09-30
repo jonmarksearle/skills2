@@ -1,0 +1,6 @@
+# Windows checkouts use core.autocrlf=true, which turns scripts into CRLF and breaks bash ("\r: command not found").
+# Keep shell and Python scripts LF in the working tree.
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+justfile text eol=lf

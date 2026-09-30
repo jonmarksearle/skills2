@@ -279,7 +279,7 @@
       "id": "CS-05-02",
       "term": "Core logic is deterministic where possible. No I/O. No",
       "label": "Core logic is deterministic where possible. No I/O. No env/time/random reads.",
-      "definition": "Core logic is deterministic where possible. No I/O. No env/time/random reads.",
+      "definition": "Core logic is deterministic where possible. No I/O. No env/time/random reads. Applies to modules the design calls Core. A module the design names an adapter, edge, or peripheral is expected to do I/O (see CS-05-03) and is compliant when its logic is otherwise deterministic and its inputs are injected.",
       "sources": [
         "CODE_STANDARDS.md §5) Design bias: functional core, imperative shell",
         "CODE_STANDARDS.examples.md §5) Design bias: functional core, imperative shell"
@@ -1510,7 +1510,7 @@
       "id": "PT-02-03",
       "term": "Failure tests verify exceptions (not fallback return values)",
       "label": "Failure tests verify exceptions (not fallback return values).",
-      "definition": "Failure tests verify exceptions (not fallback return values).",
+      "definition": "Failure tests verify exceptions (not fallback return values). Applies to failure behaviour that raises. Where the design returns errors as values, asserting the returned error kind and location is compliant.",
       "sources": [
         "CODE_STANDARDS.pytest.md §What tests must cover"
       ],
@@ -1710,7 +1710,7 @@
       "id": "PT-05-02",
       "term": "`pytest.raises(..., match=...)` for failure cases",
       "label": "Use `pytest.raises(..., match=...)` for failure cases.",
-      "definition": "Use `pytest.raises(..., match=...)` for failure cases.",
+      "definition": "Use `pytest.raises(..., match=...)` for failure cases. Applies to a function under test that raises. Where the design returns errors as values (a result with an errors field), the test asserts the returned error and is compliant.",
       "sources": [
         "CODE_STANDARDS.pytest.md §Failure behaviour: exceptions and messages"
       ],

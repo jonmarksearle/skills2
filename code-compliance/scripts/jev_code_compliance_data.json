@@ -1322,7 +1322,7 @@
       "id": "CS-15-09",
       "term": "`raise ... from exc` when translating exceptions at the boundary",
       "label": "Use `raise ... from exc` when translating exceptions at the boundary.",
-      "definition": "Use `raise ... from exc` when translating exceptions at the boundary.",
+      "definition": "Use `raise ... from exc` when translating exceptions at the boundary. Flag only a `raise` inside an `except` handler that lacks `from`. A `raise` outside any `except` handler, and a function that has no `except` handler, are not applicable.",
       "sources": [
         "CODE_STANDARDS.md §15) Errors and exception handling (strict)",
         "CODE_STANDARDS.examples.md §15) Errors and exception handling (strict)"
